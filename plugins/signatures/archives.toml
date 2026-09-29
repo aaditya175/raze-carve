@@ -1,0 +1,250 @@
+# Archive, container, and compressed file signatures
+
+[[signature]]
+name = "ZIP Archive"
+category = "Archives"
+extensions = ["zip"]
+header = "PK\\x03\\x04"
+footer = "PK\\x05\\x06"
+max_size = "10GB"
+
+[[signature]]
+name = "ZIP Empty / Spanned"
+category = "Archives"
+extensions = ["zip"]
+header = "PK\\x05\\x06"
+max_size = "10GB"
+
+[[signature]]
+name = "ZIP Spanned Archive"
+category = "Archives"
+extensions = ["zip"]
+header = "PK\\x07\\x08"
+max_size = "10GB"
+
+[[signature]]
+name = "RAR 5.x Archive"
+category = "Archives"
+extensions = ["rar"]
+header = "Rar!\\x1A\\x07\\x01\\x00"
+max_size = "10GB"
+
+[[signature]]
+name = "RAR 4.x Archive"
+category = "Archives"
+extensions = ["rar"]
+header = "Rar!\\x1A\\x07\\x00"
+max_size = "10GB"
+
+[[signature]]
+name = "7-Zip Archive"
+category = "Archives"
+extensions = ["7z"]
+header = "7z\\xBC\\xAF\\x27\\x1C"
+max_size = "20GB"
+
+[[signature]]
+name = "Gzip Archive"
+category = "Archives"
+extensions = ["gz"]
+header = "\\x1F\\x8B\\x08"
+max_size = "10GB"
+
+[[signature]]
+name = "Bzip2 Archive"
+category = "Archives"
+extensions = ["bz2"]
+header = "BZh"
+max_size = "10GB"
+
+[[signature]]
+name = "XZ Archive"
+category = "Archives"
+extensions = ["xz"]
+header = "\\xFD7zXZ\\x00"
+footer = "\\x59\\x5A"
+max_size = "10GB"
+
+[[signature]]
+name = "Zstandard Archive"
+category = "Archives"
+extensions = ["zst"]
+header = "\\x28\\xB5\\x2F\\xFD"
+max_size = "10GB"
+
+[[signature]]
+name = "TAR Archive (POSIX ustar)"
+category = "Archives"
+extensions = ["tar"]
+# Ustar magic appears at byte offset 257 in standard tar headers
+header = "????ustar"
+max_size = "20GB"
+
+[[signature]]
+name = "TAR Archive (GNU)"
+category = "Archives"
+extensions = ["tar"]
+header = "????GNUtar"
+max_size = "20GB"
+
+[[signature]]
+name = "ISO 9660 CD/DVD Image"
+category = "Archives"
+extensions = ["iso"]
+# Standard volume descriptor at 0x8000/0x8800/0x9000, CD001 identifier
+header = "CD001"
+max_size = "50GB"
+
+[[signature]]
+name = "Microsoft Cabinet (CAB)"
+category = "Archives"
+extensions = ["cab"]
+header = "MSCF\\x00\\x00\\x00\\x00"
+max_size = "4GB"
+
+[[signature]]
+name = "Debian Package (deb / ar)"
+category = "Archives"
+extensions = ["deb"]
+header = "!<arch>\\ndebian-binary"
+max_size = "4GB"
+
+[[signature]]
+name = "UNIX ar Archive"
+category = "Archives"
+extensions = ["a"]
+header = "!<arch>\\n"
+max_size = "4GB"
+
+[[signature]]
+name = "Red Hat Package (RPM)"
+category = "Archives"
+extensions = ["rpm"]
+header = "\\xED\\xAB\\xEE\\xDB"
+max_size = "10GB"
+
+[[signature]]
+name = "CPIO Archive (New ASCII)"
+category = "Archives"
+extensions = ["cpio"]
+header = "070701"
+max_size = "10GB"
+
+[[signature]]
+name = "CPIO Archive (New ASCII with CRC)"
+category = "Archives"
+extensions = ["cpio"]
+header = "070702"
+max_size = "10GB"
+
+[[signature]]
+name = "CPIO Archive (Binary LE)"
+category = "Archives"
+extensions = ["cpio"]
+header = "\\xC7\\x71"
+max_size = "10GB"
+
+[[signature]]
+name = "CPIO Archive (Binary BE)"
+category = "Archives"
+extensions = ["cpio"]
+header = "\\x71\\xC7"
+max_size = "10GB"
+
+[[signature]]
+name = "LZH / LHA Archive"
+category = "Archives"
+extensions = ["lzh"]
+header = "????-lh"
+max_size = "4GB"
+
+[[signature]]
+name = "SquashFS Filesystem (LE)"
+category = "Archives"
+extensions = ["sqfs"]
+header = "hsqs"
+max_size = "50GB"
+
+[[signature]]
+name = "SquashFS Filesystem (BE)"
+category = "Archives"
+extensions = ["sqfs"]
+header = "sqsh"
+max_size = "50GB"
+
+[[signature]]
+name = "Apple Disk Image (DMG)"
+category = "Archives"
+extensions = ["dmg"]
+footer = "koly"
+max_size = "50GB"
+
+[[signature]]
+name = "XAR Archive (e.g. macOS pkg)"
+category = "Archives"
+extensions = ["xar"]
+header = "xar!"
+max_size = "20GB"
+
+[[signature]]
+name = "LZ4 Frame Archive"
+category = "Archives"
+extensions = ["lz4"]
+header = "\\x04\\x22\\x4D\\x18"
+max_size = "10GB"
+
+[[signature]]
+name = "LZMA Archive"
+category = "Archives"
+extensions = ["lzma"]
+header = "\\x5D\\x00\\x00"
+max_size = "10GB"
+
+[[signature]]
+name = "Brotli Compressed Stream"
+category = "Archives"
+extensions = ["br"]
+header = "\\xCE\\xB2\\xCF\\x81"
+max_size = "4GB"
+
+[[signature]]
+name = "WIM Windows Imaging Format"
+category = "Archives"
+extensions = ["wim"]
+header = "MSWIM\\x00\\x00\\x00"
+max_size = "50GB"
+
+[[signature]]
+name = "ZOO Archive"
+category = "Archives"
+extensions = ["zoo"]
+header = "ZOO "
+max_size = "2GB"
+
+[[signature]]
+name = "ARJ Archive"
+category = "Archives"
+extensions = ["arj"]
+header = "\\x60\\xEA"
+max_size = "2GB"
+
+[[signature]]
+name = "ACE Archive"
+category = "Archives"
+extensions = ["ace"]
+header = "????**ACE**"
+max_size = "4GB"
+
+[[signature]]
+name = "Android APK Package"
+category = "Archives"
+extensions = ["apk"]
+header = "PK\\x03\\x04"
+max_size = "2GB"
+
+[[signature]]
+name = "Java JAR Archive"
+category = "Archives"
+extensions = ["jar"]
+header = "PK\\x03\\x04"
+max_size = "2GB"

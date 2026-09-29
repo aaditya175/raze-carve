@@ -1,0 +1,52 @@
+# Core System & Kernel
+base
+linux
+linux-firmware
+intel-ucode
+amd-ucode
+
+# Hardware Firmware & Storage Management
+nvme-cli
+smartmontools
+hdparm
+parted
+gptfdisk
+util-linux
+e2fsprogs
+dosfstools
+ntfs-3g
+btrfs-progs
+xfsprogs
+lsscsi
+pciutils
+usbutils
+
+# Networking & Transfer
+curl
+wget
+rsync
+openssh
+ethtool
+iproute2
+iputils
+networkmanager
+
+# Forensic & Scripting Runtime
+python
+python-pillow
+python-jinja
+python-pip
+openssl
+zstd
+libisoburn
+
+# Terminal Utilities & Multiplexers
+tmux
+screen
+htop
+less
+nano
+vim
+which
+sudo
+bash-completion

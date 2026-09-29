@@ -1,0 +1,5 @@
+# SecureForge Technical Portal
+User-agent: *
+Allow: /
+
+Sitemap: https://secureforge.local/sitemap.xml

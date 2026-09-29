@@ -1,0 +1,143 @@
+# Executable, compiled binary, bytecode, and system loader signatures
+
+[[signature]]
+name = "ELF Executable (Linux / BSD / Android)"
+category = "Executables"
+extensions = ["elf", "bin", "so"]
+header = "\\x7FELF"
+max_size = "2GB"
+
+[[signature]]
+name = "Windows PE Executable (EXE / DLL / SYS)"
+category = "Executables"
+extensions = ["exe", "dll", "sys", "ocx", "scr"]
+header = "MZ"
+max_size = "4GB"
+
+[[signature]]
+name = "Mach-O 64-bit Binary (macOS / iOS LE)"
+category = "Executables"
+extensions = ["dylib", "bin"]
+header = "\\xCF\\xFA\\xED\\xFE"
+max_size = "4GB"
+
+[[signature]]
+name = "Mach-O 32-bit Binary (macOS / iOS LE)"
+category = "Executables"
+extensions = ["dylib", "bin"]
+header = "\\xCE\\xFA\\xED\\xFE"
+max_size = "4GB"
+
+[[signature]]
+name = "Mach-O Universal / Fat Binary (BE)"
+category = "Executables"
+extensions = ["dylib", "bin"]
+header = "\\xCA\\xFE\\xBA\\xBE"
+max_size = "4GB"
+
+[[signature]]
+name = "Java Bytecode Class"
+category = "Executables"
+extensions = ["class"]
+header = "\\xCA\\xFE\\xBA\\xBE"
+max_size = "50MB"
+
+[[signature]]
+name = "WebAssembly Binary Module (WASM)"
+category = "Executables"
+extensions = ["wasm"]
+header = "\\x00asm"
+max_size = "200MB"
+
+[[signature]]
+name = "Android Dalvik Executable (DEX 035)"
+category = "Executables"
+extensions = ["dex"]
+header = "dex\\n035\\x00"
+max_size = "100MB"
+
+[[signature]]
+name = "Android Dalvik Executable (DEX 037)"
+category = "Executables"
+extensions = ["dex"]
+header = "dex\\n037\\x00"
+max_size = "100MB"
+
+[[signature]]
+name = "Android Dalvik Executable (DEX 038)"
+category = "Executables"
+extensions = ["dex"]
+header = "dex\\n038\\x00"
+max_size = "100MB"
+
+[[signature]]
+name = "Android Dalvik Executable (DEX 039)"
+category = "Executables"
+extensions = ["dex"]
+header = "dex\\n039\\x00"
+max_size = "100MB"
+
+[[signature]]
+name = "Android Optimized DEX (ODEX)"
+category = "Executables"
+extensions = ["odex"]
+header = "dey\\n036\\x00"
+max_size = "100MB"
+
+[[signature]]
+name = "Python 3.12 Bytecode (PYC)"
+category = "Executables"
+extensions = ["pyc"]
+header = "\\xCB\\x0D\\x0D\\x0A"
+max_size = "50MB"
+
+[[signature]]
+name = "Python 3.11 Bytecode (PYC)"
+category = "Executables"
+extensions = ["pyc"]
+header = "\\xA7\\x0D\\x0D\\x0A"
+max_size = "50MB"
+
+[[signature]]
+name = "Python 3.10 Bytecode (PYC)"
+category = "Executables"
+extensions = ["pyc"]
+header = "\\x6F\\x0D\\x0D\\x0A"
+max_size = "50MB"
+
+[[signature]]
+name = "Python 3.9 Bytecode (PYC)"
+category = "Executables"
+extensions = ["pyc"]
+header = "\\x61\\x0D\\x0D\\x0A"
+max_size = "50MB"
+
+[[signature]]
+name = "Python 3.8 Bytecode (PYC)"
+category = "Executables"
+extensions = ["pyc"]
+header = "\\x55\\x0D\\x0D\\x0A"
+max_size = "50MB"
+
+[[signature]]
+name = "Linux Kernel bzImage Header"
+category = "Executables"
+extensions = ["bin", "vmlinuz"]
+# Setup header contains "HdrS" at offset 514
+header = "????HdrS"
+max_size = "100MB"
+
+[[signature]]
+name = "Nintendo NES ROM"
+category = "Executables"
+extensions = ["nes"]
+header = "NES\\x1A"
+max_size = "64MB"
+
+[[signature]]
+name = "Nintendo Game Boy ROM"
+category = "Executables"
+extensions = ["gb"]
+# Nintendo graphic logo at offset 0x0104: \xCE\xED\x66\x66
+header = "????\\xCE\\xED\\x66\\x66"
+max_size = "64MB"

@@ -1,0 +1,240 @@
+# Document, publication, and text file signatures
+
+# ─── Standard Documents ──────────────────────────────────────────────────────
+
+[[signature]]
+name = "PDF Document"
+category = "Documents"
+extensions = ["pdf"]
+header = "%PDF-"
+footer = "%%EOF"
+max_size = "2GB"
+
+[[signature]]
+name = "Microsoft Office (Legacy OLE2 DOC/XLS/PPT)"
+category = "Documents"
+extensions = ["doc", "xls", "ppt"]
+header = "\\xD0\\xCF\\x11\\xE0\\xA1\\xB1\\x1A\\xE1"
+max_size = "1GB"
+
+[[signature]]
+name = "Microsoft Word (DOCX)"
+category = "Documents"
+extensions = ["docx"]
+header = "PK\\x03\\x04"
+max_size = "500MB"
+
+[[signature]]
+name = "Microsoft Excel (XLSX)"
+category = "Documents"
+extensions = ["xlsx"]
+header = "PK\\x03\\x04"
+max_size = "500MB"
+
+[[signature]]
+name = "Microsoft PowerPoint (PPTX)"
+category = "Documents"
+extensions = ["pptx"]
+header = "PK\\x03\\x04"
+max_size = "1GB"
+
+[[signature]]
+name = "OpenDocument Text (ODT)"
+category = "Documents"
+extensions = ["odt"]
+header = "PK\\x03\\x04????mimetypeapplication/vnd.oasis.opendocument.text"
+max_size = "500MB"
+
+[[signature]]
+name = "OpenDocument Spreadsheet (ODS)"
+category = "Documents"
+extensions = ["ods"]
+header = "PK\\x03\\x04????mimetypeapplication/vnd.oasis.opendocument.spreadsheet"
+max_size = "500MB"
+
+[[signature]]
+name = "OpenDocument Presentation (ODP)"
+category = "Documents"
+extensions = ["odp"]
+header = "PK\\x03\\x04????mimetypeapplication/vnd.oasis.opendocument.presentation"
+max_size = "1GB"
+
+[[signature]]
+name = "Rich Text Format (RTF)"
+category = "Documents"
+extensions = ["rtf"]
+header = "{\\rtf"
+footer = "}"
+max_size = "500MB"
+
+# ─── Text & Markup ───────────────────────────────────────────────────────────
+
+[[signature]]
+name = "Text File (UTF-8 BOM)"
+category = "Documents"
+extensions = ["txt"]
+header = "\\xEF\\xBB\\xBF"
+max_size = "100MB"
+
+[[signature]]
+name = "Text File (UTF-16 LE BOM)"
+category = "Documents"
+extensions = ["txt"]
+header = "\\xFF\\xFE"
+max_size = "100MB"
+
+[[signature]]
+name = "Text File (UTF-16 BE BOM)"
+category = "Documents"
+extensions = ["txt"]
+header = "\\xFE\\xFF"
+max_size = "100MB"
+
+[[signature]]
+name = "Text File (UTF-32 LE BOM)"
+category = "Documents"
+extensions = ["txt"]
+header = "\\xFF\\xFE\\x00\\x00"
+max_size = "100MB"
+
+[[signature]]
+name = "Text File (UTF-32 BE BOM)"
+category = "Documents"
+extensions = ["txt"]
+header = "\\x00\\x00\\xFE\\xFF"
+max_size = "100MB"
+
+[[signature]]
+name = "Markdown Document (YAML Frontmatter)"
+category = "Documents"
+extensions = ["md"]
+header = "---\\n"
+max_size = "50MB"
+
+[[signature]]
+name = "XML Document"
+category = "Documents"
+extensions = ["xml"]
+header = "<?xml"
+max_size = "200MB"
+
+[[signature]]
+name = "HTML Document"
+category = "Documents"
+extensions = ["html", "htm"]
+header = "<html"
+max_size = "100MB"
+
+[[signature]]
+name = "HTML Document (DOCTYPE)"
+category = "Documents"
+extensions = ["html", "htm"]
+header = "<!DOCTYPE html"
+max_size = "100MB"
+
+[[signature]]
+name = "HTML Document (DOCTYPE upper)"
+category = "Documents"
+extensions = ["html", "htm"]
+header = "<!DOCTYP"
+max_size = "100MB"
+
+[[signature]]
+name = "JSON Document (Object)"
+category = "Documents"
+extensions = ["json"]
+header = "{\\n  \\\""
+max_size = "200MB"
+
+[[signature]]
+name = "JSON Document (Compact Object)"
+category = "Documents"
+extensions = ["json"]
+header = "{\\\""
+max_size = "200MB"
+
+[[signature]]
+name = "JSON Document (Array)"
+category = "Documents"
+extensions = ["json"]
+header = "[\\n  {"
+max_size = "200MB"
+
+# ─── E-Books & Specialized Publishing ────────────────────────────────────────
+
+[[signature]]
+name = "EPUB E-Book"
+category = "Documents"
+extensions = ["epub"]
+header = "PK\\x03\\x04????mimetypeapplication/epub+zip"
+max_size = "1GB"
+
+[[signature]]
+name = "Mobipocket E-Book (MOBI)"
+category = "Documents"
+extensions = ["mobi"]
+header = "????BOOKMOBI"
+max_size = "500MB"
+
+[[signature]]
+name = "PostScript Document (PS/EPS)"
+category = "Documents"
+extensions = ["ps", "eps"]
+header = "%!PS"
+max_size = "500MB"
+
+[[signature]]
+name = "Encapsulated PostScript (Binary)"
+category = "Documents"
+extensions = ["eps"]
+header = "\\xC5\\xD0\\xD3\\xC6"
+max_size = "500MB"
+
+[[signature]]
+name = "DjVu Document"
+category = "Documents"
+extensions = ["djvu"]
+header = "AT&TFORM????DJVU"
+max_size = "1GB"
+
+[[signature]]
+name = "LaTeX Document"
+category = "Documents"
+extensions = ["tex"]
+header = "\\\\documentclass"
+max_size = "50MB"
+
+[[signature]]
+name = "Adobe InDesign Document (INDD)"
+category = "Documents"
+extensions = ["indd"]
+header = "\\x06\\x06\\xED\\xF5\\xD8\\x1D\\x46\\xE5\\xBD\\x31\\xEF\\xE7\\xFE\\x74\\xB7\\x1D"
+max_size = "2GB"
+
+[[signature]]
+name = "Compiled HTML Help (CHM)"
+category = "Documents"
+extensions = ["chm"]
+header = "ITSF\\x03\\x00\\x00\\x00"
+max_size = "500MB"
+
+[[signature]]
+name = "WordPerfect Document"
+category = "Documents"
+extensions = ["wpd"]
+header = "\\xFFWPC"
+max_size = "100MB"
+
+[[signature]]
+name = "Windows Write Document (WRI)"
+category = "Documents"
+extensions = ["wri"]
+header = "\\x31\\xBE\\x00\\x00"
+max_size = "50MB"
+
+[[signature]]
+name = "Apple iWork Pages / Keynote / Numbers"
+category = "Documents"
+extensions = ["pages", "key", "numbers"]
+header = "\\xFD;\\x07\\x00\\x00\\x00"
+max_size = "1GB"

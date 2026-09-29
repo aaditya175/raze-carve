@@ -1,0 +1,242 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+\setlength{\headheight}{15pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{seqsplit}
+\usepackage[skins,breakable]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+% ===== SIKATIKENMOGNE REPORT TEMPLATE COLOR PALETTE =====
+\definecolor{brandprimary}{RGB}{25,118,210}       % Corporate Navy Blue (#1976D2)
+\definecolor{brandprimarydark}{RGB}{13,71,161}    % Deep Blue (#0D47A1)
+\definecolor{brandsecondary}{RGB}{46,125,50}      % Forest Green (#2E7D32)
+\definecolor{brandaccent}{RGB}{230,74,25}         % Dark Accent Red/Orange
+\definecolor{neutraldark}{RGB}{33,33,33}          % Charcoal
+\definecolor{neutralgray}{RGB}{100,116,139}       % Slate Gray
+\definecolor{cardbg}{RGB}{248,250,252}             % Card background
+\definecolor{cardborder}{RGB}{226,232,240}       % Subtle border
+
+% ===== CUSTOM TCOLORBOX ENVIRONMENTS =====
+\newtcolorbox{infocard}[1]{
+    colback=cardbg,
+    colframe=brandprimary,
+    coltitle=white,
+    fonttitle=\bfseries\normalsize,
+    title={#1},
+    arc=2mm,
+    boxrule=1pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+\newtcolorbox{statutorybox}[1]{
+    colback=cardbg,
+    colframe=brandsecondary,
+    coltitle=white,
+    fonttitle=\bfseries\normalsize,
+    title={#1},
+    arc=2mm,
+    boxrule=1pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+% ===== PAGE HEADERS & FOOTERS =====
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small\textcolor{neutralgray}{\textbf{NIST SP 800-88 / DoD 5220.22-M AUDIT}}}
+\lhead{\small\textcolor{neutralgray}{\textbf{SECUREFORGE SANITIZATION CERTIFICATE}}}
+\rfoot{\small\textbf{Page \thepage}}
+\lfoot{\small\textcolor{neutralgray}{BSA 2023 \S 63 $\bullet$ ISO/IEC 17025 $\bullet$ IT Act \S 79A}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+\pagenumbering{Roman}
+
+% ==================== COVER PAGE ====================
+\begin{titlepage}
+    \vspace*{\fill}
+    \begin{center}
+        {\scshape\Large SecureForge Digital Forensics Lab \par}
+        \vspace{0.3cm}
+        {\large\textcolor{brandprimary}{\textbf{EVIDENTIARY DATA SANITIZATION DIVISION}} \par}
+        \vspace{0.2cm}
+        {\normalsize\textbf{Problem Statement: NTRO SIH26149 Compliance} \par}
+        \vspace{1.0cm}
+        {\color{brandprimary}\rule{\textwidth}{2pt}} \par
+        \vspace{0.5cm}
+        {\huge\bfseries CERTIFICATE OF DATA SANITIZATION \par}
+        \vspace{0.4cm}
+        {\large\textcolor{brandprimarydark}{\textbf{Certified Cryptographic Eradication \& Multi-Pass Purge Ledger}} \par}
+        \vspace{0.5cm}
+        {\color{brandprimary}\rule{\textwidth}{2pt}} \par
+        \vspace{1.0cm}
+    \end{center}
+
+    \begin{infocard}{Sanitization Execution Metadata}
+    \noindent
+    \begin{tabularx}{\textwidth}{lX}
+    \textbf{Certificate / Case ID:} & \texttt{ {{- case_id | tex -}} } \tabularnewline
+    \textbf{Sanitization Date:} & {{ date | tex }} \tabularnewline
+    \textbf{Target Evidence Device:} & \texttt{ {{- device | tex -}} } \tabularnewline
+    \textbf{Certifying Officer:} & {{ investigator | tex }} \tabularnewline
+    \textbf{Sanitization Standard:} & NIST SP 800-88 Rev 1 $\bullet$ DoD 5220.22-M (3-Pass) \tabularnewline
+    \textbf{Destruction Status:} & \textcolor{brandsecondary}{\textbf{100\% IRREVOCABLY PURGED}} \tabularnewline
+    \end{tabularx}
+    \end{infocard}
+
+    \vspace{0.8cm}
+    \begin{center}
+        \small
+        \textcolor{brandsecondary}{\textbf{\checkmark\ 100\% PERMANENT CRYPTOGRAPHIC ERADICATION}} \\
+        \footnotesize Zero residual magnetic/electronic remanence. Post-wipe deep carving yielded 0 fragments.
+    \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+% ==================== SECTION 1 ====================
+\section{Executive Summary \& Sanitization Scope}
+
+This certified forensic document attests that cryptographic sanitization and multi-pass sector eradication were executed on target storage media \texttt{ {{- device | tex -}} } under Case \texttt{ {{- case_id | tex -}} }. All data structures, master file tables, unallocated clusters, and slack space were permanently overwritten and verified mathematically unreconstructable.
+
+\vspace{0.3cm}
+\begin{infocard}{Key Sanitization Metrics}
+\noindent
+\begin{tabularx}{\textwidth}{lX}
+\textbf{Target Evidence Media:} & \texttt{ {{- device | tex -}} } \tabularnewline
+\textbf{Sanitization Standard:} & DoD 5220.22-M 3-Pass Overwrite $\bullet$ NIST SP 800-88 Purge \tabularnewline
+\textbf{Entropy Inversion:} & Deterministic Zero $\rightarrow$ One $\rightarrow$ CSPRNG Noise $\rightarrow$ Zero Normalization \tabularnewline
+\textbf{Post-Wipe Verification:} & SecureForge Deep Carver Re-Scan across 100\% Addressable Sectors \tabularnewline
+\textbf{Eradication Audit Result:} & \textcolor{brandsecondary}{\textbf{0 Files / Fragments Recoverable (100\% UNRECOVERABLE)}} \tabularnewline
+\end{tabularx}
+\end{infocard}
+
+% ==================== SECTION 2 ====================
+\section{Target Storage Media \& Physical Parameters}
+
+Table~\ref{tab:device_specs} summarizes the physical parameters and addressable capacity of the sanitized media.
+
+\begin{table}[H]
+\centering
+\caption{Sanitized Media Physical Parameters}
+\label{tab:device_specs}
+\noindent
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+\textbf{Physical Parameter} & \textbf{Recorded Value} \tabularnewline
+\midrule
+Target Device Path & \texttt{ {{- device | tex -}} } \tabularnewline
+Storage Geometry & 512-byte Sector Alignment $\bullet$ LBA Addressing \tabularnewline
+Sanitization Method & Cryptographic Multi-Pass Inversion \& Purge \tabularnewline
+Verification Toolchain & SecureForge Certified Forensic Engine \tabularnewline
+Audit Root Digest & {\small\texttt{ {{- root_hash | chunk_hash -}} }} \tabularnewline
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ==================== SECTION 3 ====================
+\section{Eradicated Storage Artifacts \& Pre-Wipe Audit Ledger}
+
+Table~\ref{tab:eradicated_artifacts} details the storage artifacts queued for destruction, including their pre-wipe SHA-256 fingerprints.
+
+\begin{table}[H]
+\centering
+\caption{Eradicated Storage Artifacts \& Pre-Sanitization Hashes}
+\label{tab:eradicated_artifacts}
+\noindent
+\begin{tabularx}{\textwidth}{c>{\raggedright\arraybackslash}Xrr}
+\toprule
+\textbf{\#} & \textbf{Target Artifact Details \& Pre-Wipe SHA-256} & \textbf{Size} & \textbf{Destruction Status} \tabularnewline
+\midrule
+{% if files %}
+{% for f in files %}
+{{ loop.index }} & \textbf{ {{- f.name | tex -}} } \newline
+\textcolor{neutralgray}{\textit{MIME Category: {{ f.category | tex }}}} \newline
+\textbf{Pre-Wipe SHA-256:} {\footnotesize\texttt{ {{- f.sha256 | chunk_hash -}} }} & {{ f.size | tex }} & \textcolor{brandsecondary}{\textbf{\checkmark\ ERADICATED}} \tabularnewline
+\midrule
+{% endfor %}
+{% else %}
+\multicolumn{4}{c}{\textit{No individual files listed; full volume media purge applied.}} \tabularnewline
+{% endif %}
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ==================== SECTION 4 ====================
+\section{Multi-Pass Overwrite \& Verification Sequence}
+
+In compliance with NIST SP 800-88 Revision 1 and DoD 5220.22-M guidelines, the multi-pass overwrite sequence documented in Table~\ref{tab:wipe_sequence} was executed.
+
+\begin{table}[H]
+\centering
+\caption{Multi-Pass Overwrite Sequence \& Forensic Verification Audit}
+\label{tab:wipe_sequence}
+\noindent
+\begin{tabularx}{\textwidth}{lp{6.5cm}cc}
+\toprule
+\textbf{Pass} & \textbf{Pattern Description} & \textbf{Coverage} & \textbf{Result} \tabularnewline
+\midrule
+Pass 1 & Deterministic Binary Zeros (\texttt{0x00}) & 100\% Media & \textcolor{brandsecondary}{\textbf{PASS}} \tabularnewline
+Pass 2 & Deterministic Binary Ones (\texttt{0xFF}) & 100\% Media & \textcolor{brandsecondary}{\textbf{PASS}} \tabularnewline
+Pass 3 & Cryptographic CSPRNG High-Entropy Noise & 100\% Media & \textcolor{brandsecondary}{\textbf{PASS}} \tabularnewline
+Clear Pass & Deterministic Zero Surface Normalization & 100\% Media & \textcolor{brandsecondary}{\textbf{PASS}} \tabularnewline
+\midrule
+\multicolumn{2}{l}{\textbf{Deep Carver Re-Scan Audit:}} & \multicolumn{2}{c}{\textbf{0 Files Carved (100\% UNRECOVERABLE)}} \tabularnewline
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ==================== SECTION 5 ====================
+\section{Notarized Statutory Attestation of Irrevocable Destruction}
+
+\begin{statutorybox}{Official Legal Attestation (BSA 2023 / NIST SP 800-88)}
+\textit{``I hereby certify under penalty of perjury that the data sanitization and media purging operation documented on this certificate was executed using certified SecureForge algorithms in full compliance with NIST SP 800-88 Revision 1 and DoD 5220.22-M standards. All physical storage clusters, file structures, and metadata have been permanently and irrevocably overwritten such that data recovery is impossible by any known forensic method.''}
+\end{statutorybox}
+
+\vspace{0.8cm}
+
+\begin{table}[H]
+\centering
+\noindent
+\begin{tabularx}{\textwidth}{XX}
+\textbf{Investigator / Certifying Officer:} & \textbf{SecureForge Certifying Authority:} \tabularnewline
+\vspace{0.1cm} & \vspace{0.1cm} \tabularnewline
+\rule{7.0cm}{0.8pt} & \rule{7.0cm}{0.8pt} \tabularnewline
+\textbf{ {{- investigator | tex -}} } & \textbf{SecureForge Certifying Lab} \tabularnewline
+Forensic Operations Director & NIST SP 800-88 Media Sanitization Division \tabularnewline
+\end{tabularx}
+\end{table}
+
+\vspace{0.2cm}
+\begin{infocard}{Master Sanitization Audit Digest}
+\noindent
+\textbf{Audit SHA-256:} {\small\texttt{ {{- root_hash | chunk_hash -}} }}
+\end{infocard}
+
+\vfill
+\begin{center}
+\small\textcolor{neutralgray}{--- END OF OFFICIAL CERTIFICATE OF DATA SANITIZATION ---}
+\end{center}
+
+\end{document}

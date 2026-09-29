@@ -1,0 +1,92 @@
+# Professional RAW camera image signatures (Digital Photography Forensics)
+
+[[signature]]
+name = "Canon RAW v2 (CR2)"
+category = "RawImages"
+extensions = ["cr2"]
+header = "II\\x2A\\x00\\x10\\x00\\x00\\x00CR"
+max_size = "200MB"
+
+[[signature]]
+name = "Canon RAW v3 (CR3)"
+category = "RawImages"
+extensions = ["cr3"]
+header = "????ftypcrx "
+max_size = "200MB"
+
+[[signature]]
+name = "Nikon Electronic Format (NEF / TIFF LE)"
+category = "RawImages"
+extensions = ["nef"]
+header = "II\\x2A\\x00"
+max_size = "200MB"
+
+[[signature]]
+name = "Sony Alpha RAW (ARW)"
+category = "RawImages"
+extensions = ["arw"]
+header = "II\\x2A\\x00"
+max_size = "200MB"
+
+[[signature]]
+name = "Adobe Digital Negative (DNG)"
+category = "RawImages"
+extensions = ["dng"]
+header = "II\\x2A\\x00"
+max_size = "200MB"
+
+[[signature]]
+name = "Fujifilm RAW (RAF)"
+category = "RawImages"
+extensions = ["raf"]
+header = "FUJIFILMCCD-RAW "
+max_size = "200MB"
+
+[[signature]]
+name = "Olympus RAW (ORF LE)"
+category = "RawImages"
+extensions = ["orf"]
+header = "IIRO\\x08\\x00"
+max_size = "200MB"
+
+[[signature]]
+name = "Olympus RAW (ORF BE)"
+category = "RawImages"
+extensions = ["orf"]
+header = "MMOR\\x00\\x00"
+max_size = "200MB"
+
+[[signature]]
+name = "Panasonic RAW (RW2)"
+category = "RawImages"
+extensions = ["rw2"]
+header = "IIU\\x00"
+max_size = "200MB"
+
+[[signature]]
+name = "Sigma / Foveon RAW (X3F)"
+category = "RawImages"
+extensions = ["x3f"]
+header = "FOVb"
+max_size = "200MB"
+
+[[signature]]
+name = "Hasselblad RAW (3FR)"
+category = "RawImages"
+extensions = ["3fr"]
+header = "II\\x2A\\x00"
+max_size = "300MB"
+
+[[signature]]
+name = "Phase One RAW (IIQ)"
+category = "RawImages"
+extensions = ["iiq"]
+header = "II\\x2A\\x00"
+max_size = "300MB"
+
+[[signature]]
+name = "Minolta RAW (MRW)"
+category = "RawImages"
+extensions = ["mrw"]
+header = "\\x00MRM"
+max_size = "100MB"

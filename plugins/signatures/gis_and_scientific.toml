@@ -1,0 +1,89 @@
+# GIS, geospatial, medical imaging and scientific dataset signatures
+
+[[signature]]
+name = "DICOM Medical Image"
+category = "Scientific"
+extensions = ["dcm", "dicom"]
+# 128 byte preamble + "DICM"
+header = "????DICM"
+max_size = "1GB"
+
+[[signature]]
+name = "FITS Astronomical Image (Flexible Image Transport)"
+category = "Scientific"
+extensions = ["fits", "fit"]
+header = "SIMPLE  =                    T"
+max_size = "10GB"
+
+[[signature]]
+name = "HDF5 Hierarchical Scientific Dataset"
+category = "Scientific"
+extensions = ["h5", "hdf5"]
+header = "\\x89HDF\\r\\n\\x1A\\n"
+max_size = "50GB"
+
+[[signature]]
+name = "NetCDF Scientific Data (Classic 32-bit)"
+category = "Scientific"
+extensions = ["nc"]
+header = "CDF\\x01"
+max_size = "50GB"
+
+[[signature]]
+name = "NetCDF Scientific Data (64-bit Offset)"
+category = "Scientific"
+extensions = ["nc"]
+header = "CDF\\x02"
+max_size = "50GB"
+
+[[signature]]
+name = "NetCDF Scientific Data (CDF-5 64-bit Data)"
+category = "Scientific"
+extensions = ["nc"]
+header = "CDF\\x05"
+max_size = "50GB"
+
+[[signature]]
+name = "ESRI Shapefile Spatial Index (SHP / SHX)"
+category = "Scientific"
+extensions = ["shp", "shx"]
+header = "\\x00\\x00\\x27\\x0A"
+max_size = "5GB"
+
+[[signature]]
+name = "LAS LiDAR Airborne Point Cloud (LASF)"
+category = "Scientific"
+extensions = ["las"]
+header = "LASF"
+max_size = "20GB"
+
+[[signature]]
+name = "MATLAB MAT-File v5 / v7"
+category = "Scientific"
+extensions = ["mat"]
+header = "MATLAB 5.0 MAT-file"
+max_size = "10GB"
+
+[[signature]]
+name = "GRIB Meteorological Grid Data"
+category = "Scientific"
+extensions = ["grb", "grib"]
+header = "GRIB"
+footer = "7777"
+max_size = "10GB"
+
+[[signature]]
+name = "BUFR Meteorological Binary Record"
+category = "Scientific"
+extensions = ["bufr"]
+header = "BUFR"
+footer = "7777"
+max_size = "10GB"
+
+[[signature]]
+name = "PDB Protein Data Bank Molecule"
+category = "Scientific"
+extensions = ["pdb"]
+header = "HEADER    "
+footer = "END   "
+max_size = "100MB"

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAZE-CARVE Technical Manual &amp; Command Reference</title>
+  <meta name="description" content="Complete operational documentation for RAZE-CARVE forensic CLI (sih149) and terminal interface (sforge). Command reference, flags, standards, and examples.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .docs-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3.5rem;
+      padding: 3rem 0 6rem;
+    }
+    .docs-sidebar {
+      position: sticky;
+      top: 96px;
+      height: fit-content;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+    .docs-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      border-left: 1px solid var(--border-subtle);
+      padding-left: 1rem;
+    }
+    .docs-nav a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      display: block;
+      padding: 0.25rem 0;
+    }
+    .docs-nav a:hover, .docs-nav a.active {
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+    .doc-section {
+      margin-bottom: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .doc-section:last-child {
+      border-bottom: none;
+    }
+    .doc-section h2 {
+      font-size: 1.85rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .doc-section h3 {
+      font-size: 1.25rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .cmd-box {
+      background: var(--bg-terminal);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0 1.5rem;
+      position: relative;
+    }
+    .cmd-box pre {
+      margin: 0;
+      overflow-x: auto;
+      color: #38BDF8;
+      font-size: 0.9rem;
+    }
+    .cmd-box .copy-btn {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation Bar ────────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <span>SecureForge</span>
+        <span class="tag">DOCS</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#features" class="nav-link">Capabilities</a></li>
+          <li><a href="downloads.html" class="nav-link">Downloads</a></li>
+          <li><a href="docs.html" class="nav-link active">Documentation</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="downloads.html" class="btn btn-primary btn-sm">Get v0.1.0</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Docs Layout ───────────────────────────────────────────────────── -->
+  <div class="container docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">Command Reference</div>
+      <ul class="docs-nav">
+        <li><a href="#test">sih149 test (Diagnostics)</a></li>
+        <li><a href="#demo">sih149 demo (Live Demo)</a></li>
+        <li><a href="#info">sih149 info (Hardware)</a></li>
+        <li><a href="#wipe">sih149 wipe (DiskWipe)</a></li>
+        <li><a href="#shred">sih149 shred (File Wipe)</a></li>
+        <li><a href="#recover">sih149 recover (Carver)</a></li>
+        <li><a href="#firmware">sih149 firmware-erase</a></li>
+        <li><a href="#report">sih149 report (Certificates)</a></li>
+        <li><a href="#tui">sforge (Interactive TUI)</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+
+      <!-- Section: sih149 test -->
+      <section class="doc-section" id="test">
+        <h2><code>sih149 test</code> — In-Situ Hardware Diagnostics</h2>
+        <p>Executes all 23 live cryptographic, memory, carver, and safety assertions in-memory. Verifies system integrity before forensic deployment.</p>
+        <div class="cmd-box">
+          <pre><code># Human-readable visual diagnostic dashboard
+sih149 test
+
+# Machine-readable JSON for CI/CD gates
+sih149 test --json</code></pre>
+          <button class="copy-btn" data-copy="sih149 test">Copy</button>
+        </div>
+        <h3>Assertion Domains Covered</h3>
+        <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+          <li><strong>Wiper Subsystem:</strong> Zero fill, Ones fill, CSPRNG randomness, sequence correctness (DoD/Gutmann).</li>
+          <li><strong>Safety Guardrails:</strong> System directory block, relative traversal escape neutralization, symlink rejection, boot drive lockdown.</li>
+          <li><strong>Carver Validation:</strong> Hex decoding, JPEG SOI/EOI parser, PNG IHDR chunk validator, SQLite B-tree page geometry.</li>
+          <li><strong>Cryptographic Primitives:</strong> NIST SHA-256 known answer vector, constant-time digest comparison, tamper-evident hash chain verification.</li>
+        </ul>
+      </section>
+
+      <!-- Section: sih149 demo -->
+      <section class="doc-section" id="demo">
+        <h2><code>sih149 demo</code> — Autonomous Live Forensic Demo</h2>
+        <p>Provisions an isolated forensic workspace, synthesizes a sector-aligned disk image with embedded artifacts (PNG, JPEG, SQLite, high-entropy corrupt blocks), executes the deep carver, verifies 100% bit-exact SHA-256 matches, and compiles an audit certificate PDF.</p>
+        <div class="cmd-box">
+          <pre><code># Execute self-contained demo
+sih149 demo
+
+# Automated test output for evaluation
+sih149 demo --json</code></pre>
+          <button class="copy-btn" data-copy="sih149 demo">Copy</button>
+        </div>
+      </section>
+
+      <!-- Section: sih149 info -->
+      <section class="doc-section" id="info">
+        <h2><code>sih149 info</code> — Storage Hardware Triage</h2>
+        <p>Discovers attached storage devices, partitions, mountpoints, serial numbers, bus protocols, and SMART health telemetry.</p>
+        <div class="cmd-box">
+          <pre><code># Enumerate all attached block devices
+sudo sih149 info
+
+# Query specific device with detailed SMART telemetry
+sudo sih149 info --device /dev/sdb --json</code></pre>
+          <button class="copy-btn" data-copy="sudo sih149 info">Copy</button>
+        </div>
+      </section>
+
+      <!-- Section: sih149 wipe -->
+      <section class="doc-section" id="wipe">
+        <h2><code>sih149 wipe</code> — Certified Disk Sanitization</h2>
+        <p>Sanitizes block devices adhering to NIST SP 800-88 Rev 1, DoD 5220.22-M (3-Pass &amp; 7-Pass), or Gutmann (35-Pass) standards. Enforces fail-safe lockouts against boot drives.</p>
+        <div class="cmd-box">
+          <pre><code># Execute DoD 5220.22-M 3-Pass with readback verification
+sudo sih149 wipe --device /dev/sdb --method dod3 --verify
+
+# Execute single-pass zero wipe (NIST Clear)
+sudo sih149 wipe --device /dev/sdb --method zero --verify</code></pre>
+          <button class="copy-btn" data-copy="sudo sih149 wipe --device /dev/sdb --method dod3 --verify">Copy</button>
+        </div>
+        <h3>Available Sanitization Methods</h3>
+        <p><code>zero</code> (0x00 fill) | <code>ones</code> (0xFF fill) | <code>random</code> (CSPRNG stream) | <code>dod3</code> (3-Pass DoD 5220.22-M) | <code>dod7</code> (7-Pass DoD ECE) | <code>gutmann</code> (35-Pass magnetic matrix)</p>
+      </section>
+
+      <!-- Section: sih149 shred -->
+      <section class="doc-section" id="shred">
+        <h2><code>sih149 shred</code> — File &amp; Directory Sanitization</h2>
+        <p>Multi-pass file shredder with metadata scrambling, successive random renames, cluster slack scrubbing, and file truncation.</p>
+        <div class="cmd-box">
+          <pre><code># Securely shred a sensitive document (3 passes, 8 renames)
+sih149 shred --target /path/to/evidence.pdf --passes 3 --renames 8 --yes
+
+# Recursively shred an entire directory tree
+sih149 shred --target /path/to/case_folder --passes 7 --yes</code></pre>
+          <button class="copy-btn" data-copy="sih149 shred --target /path/to/evidence.pdf --passes 3 --renames 8 --yes">Copy</button>
+        </div>
+      </section>
+
+      <!-- Section: sih149 recover -->
+      <section class="doc-section" id="recover">
+        <h2><code>sih149 recover</code> — Chunk-Aware File Carver</h2>
+        <p>Scans raw storage devices, disk images (<code>.dd</code>, <code>.raw</code>, <code>.img</code>), or E01 evidence containers. Reconstructs files based on internal structural boundaries rather than raw heuristic guessing.</p>
+        <div class="cmd-box">
+          <pre><code># Carve all supported file formats from evidence source
+sudo sih149 recover --source /dev/sdb --out-dir /mnt/evidence
+
+# Filter specific formats (e.g. PNG and SQLite only)
+sudo sih149 recover --source /dev/sdb --out-dir /mnt/evidence --types png,sqlite</code></pre>
+          <button class="copy-btn" data-copy="sudo sih149 recover --source /dev/sdb --out-dir /mnt/evidence">Copy</button>
+        </div>
+      </section>
+
+      <!-- Section: sih149 firmware-erase -->
+      <section class="doc-section" id="firmware">
+        <h2><code>sih149 firmware-erase</code> — Silicon-Level Erase</h2>
+        <p>Issues hardware controller commands to sanitize flash memory overprovisioning areas, wear-leveling pools, and retired bad blocks that software overwrites cannot touch.</p>
+        <div class="cmd-box">
+          <pre><code># NVMe Cryptographic Erase (scrambles AES media encryption key)
+sudo sih149 firmware-erase --device /dev/nvme0n1 --action nvme-crypto-erase --yes
+
+# ATA Enhanced Secure Erase
+sudo sih149 firmware-erase --device /dev/sda --action ata-enhanced-secure-erase --yes</code></pre>
+          <button class="copy-btn" data-copy="sudo sih149 firmware-erase --device /dev/nvme0n1 --action nvme-crypto-erase --yes">Copy</button>
+        </div>
+      </section>
+
+      <!-- Section: sforge TUI -->
+      <section class="doc-section" id="tui">
+        <h2><code>sforge</code> — Full-Screen Terminal TUI</h2>
+        <p>Zero-latency terminal interface built with Ratatui and Crossterm. Provides interactive device selection, live sector progress bars, and real-time Shannon entropy heatmaps.</p>
+        <div class="cmd-box">
+          <pre><code># Launch TUI interface
+sudo sforge</code></pre>
+          <button class="copy-btn" data-copy="sudo sforge">Copy</button>
+        </div>
+        <h3>Keyboard Navigation</h3>
+        <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+          <li><code>[↑ / ↓]</code> Navigate device list or operation menus</li>
+          <li><code>[Enter]</code> Select target or launch operation</li>
+          <li><code>[Tab]</code> Switch between active inspection panes</li>
+          <li><code>[Space]</code> Select individual file carving candidates</li>
+          <li><code>[Q / Esc]</code> Exit to terminal</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 RAZE-CARVE Contributors. Licensed under MIT. Built for Smart India Hackathon.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="index.html">Home</a>
+          <a href="downloads.html">Downloads Hub</a>
+          <a href="https://github.com/razecarve/razecarve" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+# ═══════════════════════════════════════════════
+# SecureForge .gitignore
+# ═══════════════════════════════════════════════
+
+# ── Rust ──────────────────────────────────────
+/target/
+**/*.rs.bk
+Cargo.lock
+!crates/sih149-cli/Cargo.lock
+
+# ── Node / Frontend ──────────────────────────
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+website/node_modules
+website/dist/
+website/public/releases/
+website/public/v86/
+
+# ── Python ───────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+*.egg
+venv/
+.venv/
+env/
+.env
+
+# ── Tauri ────────────────────────────────────
+src-tauri/target/
+src-tauri/gen/
+src-tauri/WixTools/
+
+# ── IDE / Editor ─────────────────────────────
+.vscode/
+.idea/
+.agents/
+.claude/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Build Artifacts ──────────────────────────
+*.iso
+*.img
+*.dd
+*.raw
+*.e01
+*.o
+*.so
+*.dylib
+iso/build/
+iso/output/
+iso/work/
+iso/arch/airootfs/usr/
+
+# ── Test Artifacts ───────────────────────────
+tests/fixtures/generated/
+tests/output/
+coverage/
+lcov.info
+
+# ── Reports & Case Data ─────────────────────
+*.db
+*.pdf
+reports/
+cases/
+case_data/
+recovered_evidence/
+[Rr]ecovered/
+
+# ── Secrets ──────────────────────────────────
+*.pem
+*.key
+*.p12
+*.pfx
+!pipeline/templates/*
+
+# ── Raw Screen Captures & Video Scratch (Kept in website/public) ──
+149 videos/
+/demo_videos/
+brag-output/
+Create_a_premium_*
+gemini_generated_*
+*.zip
+*.tar.gz
+

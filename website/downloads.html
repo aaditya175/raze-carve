@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAZE-CARVE Downloads &amp; Installation Hub — Live ISO, Docker, Linux Binaries</title>
+  <meta name="description" content="Official release downloads for RAZE-CARVE: bootable Live ISO, Docker container, standalone Linux x86_64 binaries, and manual packaging instructions.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ── Navigation Bar ────────────────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand" style="display:flex;align-items:center;gap:8px;">
+        <img src="logo.png" alt="RAZE-CARVE" style="height:32px;width:auto;" />
+        <span class="tag">v0.1.0</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html#features" class="nav-link">Capabilities</a></li>
+          <li><a href="index.html#standards" class="nav-link">Hardware &amp; Standards</a></li>
+          <li><a href="index.html#entropy" class="nav-link">Entropy Scanner</a></li>
+          <li><a href="downloads.html" class="nav-link active">Downloads</a></li>
+          <li><a href="docs.html" class="nav-link">Docs &amp; CLI</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/razecarve/razecarve" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+            <path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Downloads Header ──────────────────────────────────────────────── -->
+  <section class="hero" style="padding: 4rem 0 3rem;">
+    <div class="container text-center" style="max-width: 860px; margin: 0 auto; text-align: center;">
+      <span class="badge badge-emerald" style="margin-bottom: 1rem;">OFFICIAL PRODUCTION RELEASES</span>
+      <h1 style="font-size: 2.75rem; margin-bottom: 1rem;">RAZE-CARVE Release Hub</h1>
+      <p style="font-size: 1.15rem; color: var(--text-secondary);">
+        Choose the deployment method optimized for your workflow: bootable live media for air-gapped forensic triage, isolated Docker images, or native Linux ELF binaries.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Interactive Downloads Component ───────────────────────────────── -->
+  <section class="section" style="padding: 3rem 0 5rem;">
+    <div class="container">
+      <div class="download-hub">
+        <!-- Navigation Tabs -->
+        <div class="download-nav-tabs">
+          <button class="dl-tab-btn active" data-target="pane-iso">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            1. Bootable Live ISO
+          </button>
+          <button class="dl-tab-btn" data-target="pane-docker">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+              <line x1="6" y1="6" x2="6.01" y2="6"/>
+              <line x1="6" y1="18" x2="6.01" y2="18"/>
+            </svg>
+            2. Docker Container
+          </button>
+          <button class="dl-tab-btn" data-target="pane-binaries">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            3. Linux x86_64 Binaries
+          </button>
+          <button class="dl-tab-btn" data-target="pane-source">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            4. Build from Source
+          </button>
+        </div>
+
+        <!-- ── Pane 1: Bootable Live ISO ────────────────────────────────── -->
+        <div class="download-pane active" id="pane-iso">
+          <div class="dl-hero-card">
+            <div class="dl-details">
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <span class="badge badge-emerald">RECOMMENDED FOR FIELD TRIAGE</span>
+                <span class="badge badge-cyan">HYBRID UEFI + BIOS</span>
+              </div>
+              <h3>raze-carve-live-0.2.1-gui-amd64.iso</h3>
+              <p>Self-contained, air-gapped live operating system. Boots in &lt;5 seconds directly into RAM, auto-logs into <code>root</code>, and launches the interactive TUI kiosk (<code>sforge</code>) while hosting the forensic web server on port <code>7878</code>.</p>
+              
+              <div class="dl-sha-box">
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">SHA-256 CHECKSUM:</div>
+                  <code>dbcf2a4981ca7bdfb6dce6cd23a881e1b8431f52d63de089bb1e7ff50540af6e</code>
+                </div>
+                <button class="copy-btn" data-copy="dbcf2a4981ca7bdfb6dce6cd23a881e1b8431f52d63de089bb1e7ff50540af6e">Copy</button>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="/releases/raze-carve-live-0.2.1-gui-amd64.iso" download="raze-carve-live-0.2.1-gui-amd64.iso" class="btn btn-primary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Download Live ISO (1.35 GB)
+                </a>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Size: 1,345,683,456 bytes</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-terminal); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+              <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem; color: #FFFFFF;">Live Boot Specifications</h4>
+              <ul style="list-style: none; font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Target Hardware:</strong> Any 64-bit PC / Laptop / Server</li>
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Boot Modes:</strong> UEFI (systemd-boot) &amp; BIOS (Syslinux)</li>
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Storage Drivers:</strong> NVMe, SATA AHCI, SAS, eMMC, USB</li>
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Default Account:</strong> <code>root</code> (Auto-login on tty1)</li>
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Web Workstation:</strong> Active on <code>http://localhost:7878</code></li>
+              </ul>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.25rem;">Flashing Guides for USB Thumb Drives</h4>
+          <div class="instruction-grid">
+            <div class="instruction-step">
+              <h4><span class="step-num">A</span> Linux / macOS Terminal (<code>dd</code>)</h4>
+              <p>Write directly to raw block device (replace <code>/dev/sdX</code> with your USB drive):</p>
+              <pre><code># Identify USB disk path
+sudo lsblk
+
+# Flash ISO image with fsync
+sudo dd if=raze-carve-live-0.1.0-x86_64.iso of=/dev/sdX bs=4M status=progress conv=fsync</code></pre>
+            </div>
+
+            <div class="instruction-step">
+              <h4><span class="step-num">B</span> Multi-Boot Drive (Ventoy)</h4>
+              <p>Ventoy allows keeping multiple ISOs on a single USB drive with zero reformatting:</p>
+              <pre><code># 1. Install Ventoy to your USB drive
+# 2. Copy ISO directly to the Ventoy partition:
+cp raze-carve-live-0.1.0-x86_64.iso /media/ventoy/
+
+# 3. Boot any PC and select RAZE-CARVE from menu</code></pre>
+            </div>
+
+            <div class="instruction-step">
+              <h4><span class="step-num">C</span> Windows (Rufus)</h4>
+              <p>Open Rufus, select your USB drive, choose <code>raze-carve-live-0.1.0-x86_64.iso</code>, select <strong>GPT / UEFI</strong> (or MBR / BIOS), and choose <strong>DD Image mode</strong> when prompted.</p>
+            </div>
+
+            <div class="instruction-step">
+              <h4><span class="step-num">D</span> Cross-Platform (BalenaEtcher)</h4>
+              <p>Launch BalenaEtcher on Windows, Mac, or Linux, select <strong>Flash from file</strong>, pick the ISO, select your USB drive, and click <strong>Flash!</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Pane 2: Docker Container ─────────────────────────────────── -->
+        <div class="download-pane" id="pane-docker">
+          <div class="dl-hero-card">
+            <div class="dl-details">
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <span class="badge badge-cyan">CONTAINERIZED DEPLOYMENT</span>
+                <span class="badge badge-emerald">ZERO HOST DEPENDENCIES</span>
+              </div>
+              <h3>normie69k/razecarve:latest</h3>
+              <p>Run the complete RAZE-CARVE workstation (Web GUI server, Python classification engine, and CLI tools) inside an isolated Linux container with direct access to physical disks.</p>
+
+              <div class="dl-sha-box">
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">DOCKER PULL COMMAND:</div>
+                  <code>docker pull normie69k/razecarve:latest</code>
+                </div>
+                <button class="copy-btn" data-copy="docker pull normie69k/razecarve:latest">Copy</button>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="btn btn-primary copy-btn" data-copy="docker run -d --privileged --network host -v /dev:/dev -v $(pwd)/cases:/root/cases -p 7878:7878 normie69k/razecarve:latest">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                  Copy Run Command
+                </button>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Docker Hub Verified</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-terminal); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem;">
+              <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem; color: #FFFFFF;">Container Capabilities</h4>
+              <ul style="list-style: none; font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Direct Hardware Access:</strong> <code>--privileged -v /dev:/dev</code></li>
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Web GUI Endpoint:</strong> <code>http://localhost:7878</code></li>
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Case Ledger Mount:</strong> <code>-v ./cases:/root/cases</code></li>
+                <li><span style="color: var(--accent-cyan);">●</span> <strong>Architecture:</strong> Linux x86_64</li>
+              </ul>
+            </div>
+          </div>
+
+          <h4 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.25rem;">Docker Execution Recipes</h4>
+          <div class="instruction-grid">
+            <div class="instruction-step">
+              <h4><span class="step-num">1</span> Run Background Web Workstation</h4>
+              <p>Starts the RAZE-CARVE server accessible from any web browser on port 7878:</p>
+              <pre><code>docker run -d \
+  --name razecarve \
+  --privileged \
+  -v /dev:/dev \
+  -v $(pwd)/case_data:/root/cases \
+  -p 7878:7878 \
+  normie69k/razecarve:latest
+
+# Open browser at: http://localhost:7878</code></pre>
+            </div>
+
+            <div class="instruction-step">
+              <h4><span class="step-num">2</span> Run One-Shot CLI Inspection</h4>
+              <p>Execute command-line disk enumeration or carving without opening web ports:</p>
+              <pre><code># Enumerate storage devices
+docker run --rm --privileged \
+  -v /dev:/dev \
+  normie69k/razecarve:latest \
+  sih149 info
+
+# Run 23 Subsystem Diagnostics
+docker run --rm normie69k/razecarve:latest sih149 test</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Pane 3: Linux x86_64 Standalone Binaries ─────────────────── -->
+        <div class="download-pane" id="pane-binaries">
+          <div style="margin-bottom: 2rem;">
+            <h3>Standalone Linux x86_64 ELF Binaries (v0.1.0)</h3>
+            <p>Statically linked against system libc with zero garbage collection overhead. Download individual components directly onto forensic workstations.</p>
+          </div>
+
+          <div class="table-container" style="margin-bottom: 2rem;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Binary Name</th>
+                  <th>Size</th>
+                  <th>SHA-256 Checksum</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong style="color: #FFFFFF;">Forensic CLI</strong><br>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Scriptable disk wiping, shredding, carver, diagnostics</span>
+                  </td>
+                  <td><code>sih149</code></td>
+                  <td>6.2 MB</td>
+                  <td><code style="font-size: 0.8rem;">ec8e0b7f9dd93b27e0a2fa64c5cdd49e...</code></td>
+                  <td>
+                    <button class="copy-btn btn-sm" data-copy="ec8e0b7f9dd93b27e0a2fa64c5cdd49e7601923f217cfc9bd8907f0305537b5c">Copy SHA</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong style="color: #FFFFFF;">Terminal Kiosk TUI</strong><br>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Interactive Ratatui terminal dashboard, entropy heatmaps</span>
+                  </td>
+                  <td><code>sforge</code></td>
+                  <td>5.7 MB</td>
+                  <td><code style="font-size: 0.8rem;">2f21a706c31f6a44c9b1ac8912c25ef2...</code></td>
+                  <td>
+                    <button class="copy-btn btn-sm" data-copy="2f21a706c31f6a44c9b1ac8912c25ef20658573ecb7e0382fef530501780effd">Copy SHA</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong style="color: #FFFFFF;">Desktop GUI &amp; Server</strong><br>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Tauri workstation and background REST/WebSocket server</span>
+                  </td>
+                  <td><code>raze-carve-desktop</code></td>
+                  <td>21.8 MB</td>
+                  <td><code style="font-size: 0.8rem;">5184452b6ac3e77769ac6b8282509a8e...</code></td>
+                  <td>
+                    <button class="copy-btn btn-sm" data-copy="5184452b6ac3e77769ac6b8282509a8eafc35c43df66fb2c1b9cf276cf821671">Copy SHA</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>Manual Installation into System Path</h4>
+          <div class="instruction-step" style="margin-top: 1rem;">
+            <p>Install binaries into <code>/usr/local/bin</code> and verify execution:</p>
+            <pre><code># Make executable and install to standard path
+sudo install -m 755 target/release/sih149 /usr/local/bin/sih149
+sudo install -m 755 target/release/sforge /usr/local/bin/sforge
+sudo install -m 755 target/release/raze-carve-desktop /usr/local/bin/raze-carve-desktop
+
+# Verify installation
+sih149 test
+sforge --version</code></pre>
+          </div>
+        </div>
+
+        <!-- ── Pane 4: Build from Source ────────────────────────────────── -->
+        <div class="download-pane" id="pane-source">
+          <div style="margin-bottom: 2rem;">
+            <h3>Compile RAZE-CARVE from Clean Source</h3>
+            <p>Build the entire zero-warning Rust workspace with cargo, verify the 181 unit tests, and compile the frontend.</p>
+          </div>
+
+          <div class="instruction-grid">
+            <div class="instruction-step">
+              <h4><span class="step-num">1</span> Prerequisites</h4>
+              <p>Install Rust toolchain and Linux development headers:</p>
+              <pre><code># On Debian / Ubuntu
+sudo apt install -y build-essential curl pkg-config libssl-dev libsqlite3-dev
+
+# On Arch Linux
+sudo pacman -S --needed base-devel rustup openssl sqlite
+
+# Ensure Rust stable is active
+rustup default stable</code></pre>
+            </div>
+
+            <div class="instruction-step">
+              <h4><span class="step-num">2</span> Clone &amp; Compile Workspace</h4>
+              <p>Clone the repository and compile all workspace crates in release mode:</p>
+              <pre><code>git clone https://github.com/razecarve/razecarve.git
+cd razecarve
+
+# Run verification test suite
+cargo test --workspace
+
+# Compile optimized release binaries
+cargo build --release --workspace
+
+# Binaries output to: target/release/sih149, sforge, raze-carve-desktop</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand">
+            <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+            <span>SecureForge</span>
+          </div>
+          <p>Sanitize. Recover. Certify.<br>Universal forensic data destruction, deep carving, and cryptographic chain-of-custody platform.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#features">Capabilities Overview</a></li>
+            <li><a href="index.html#standards">Hardware Matrix</a></li>
+            <li><a href="index.html#entropy">Entropy Heatmap</a></li>
+            <li><a href="index.html#comparison">Competitor Comparison</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Downloads</h4>
+          <ul class="footer-links">
+            <li><a href="downloads.html#iso">Bootable Live ISO</a></li>
+            <li><a href="downloads.html#docker">Docker Container</a></li>
+            <li><a href="downloads.html#binaries">Linux Binaries</a></li>
+            <li><a href="downloads.html#source">Source Code</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Documentation</h4>
+          <ul class="footer-links">
+            <li><a href="docs.html#cli">CLI Command Reference</a></li>
+            <li><a href="docs.html#tui">TUI User Manual</a></li>
+            <li><a href="docs.html#demo">Live Demo Guide</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 RAZE-CARVE Contributors. Licensed under MIT. Built for Smart India Hackathon.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://github.com/razecarve/razecarve" target="_blank" rel="noopener">GitHub</a>
+          <a href="docs.html">Docs</a>
+          <a href="downloads.html">Downloads</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

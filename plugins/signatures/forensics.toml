@@ -1,0 +1,113 @@
+# Advanced Forensic Disk, Memory & Capture Image Signatures
+
+[[signature]]
+name = "EWF / EnCase E01 Image"
+category = "Forensics"
+extensions = ["e01", "ewf"]
+header = "EVF\\t\\r\\n\\xFF\\x00"
+max_size = "500GB"
+
+[[signature]]
+name = "VMware VMDK Virtual Disk"
+category = "Forensics"
+extensions = ["vmdk"]
+header = "KDMV"
+max_size = "500GB"
+
+[[signature]]
+name = "Microsoft VHD Virtual Hard Disk"
+category = "Forensics"
+extensions = ["vhd"]
+header = "conectix"
+max_size = "500GB"
+
+[[signature]]
+name = "Microsoft VHDX Virtual Disk"
+category = "Forensics"
+extensions = ["vhdx"]
+header = "vhdxfile"
+max_size = "500GB"
+
+[[signature]]
+name = "QEMU QCOW2 Disk Image"
+category = "Forensics"
+extensions = ["qcow2"]
+header = "QFI\\xFB"
+max_size = "500GB"
+
+[[signature]]
+name = "Oracle VirtualBox VDI Disk Image"
+category = "Forensics"
+extensions = ["vdi"]
+header = "<<< Oracle VM VirtualBox Disk Image >>>"
+max_size = "500GB"
+
+[[signature]]
+name = "Wireshark PCAP Capture (Microsecond LE)"
+category = "Forensics"
+extensions = ["pcap"]
+header = "\\xD4\\xC3\\xB2\\xA1"
+max_size = "50GB"
+
+[[signature]]
+name = "Wireshark PCAP Capture (Microsecond BE)"
+category = "Forensics"
+extensions = ["pcap"]
+header = "\\xA1\\xB2\\xC3\\xD4"
+max_size = "50GB"
+
+[[signature]]
+name = "Wireshark PCAP Capture (Nanosecond LE)"
+category = "Forensics"
+extensions = ["pcap"]
+header = "\\x4D\\x3C\\xB2\\xA1"
+max_size = "50GB"
+
+[[signature]]
+name = "Wireshark PCAP Capture (Nanosecond BE)"
+category = "Forensics"
+extensions = ["pcap"]
+header = "\\xA1\\xB2\\x3C\\x4D"
+max_size = "50GB"
+
+[[signature]]
+name = "Wireshark PCAPNG Capture"
+category = "Forensics"
+extensions = ["pcapng"]
+header = "\\x0A\\x0D\\x0D\\x0A"
+max_size = "50GB"
+
+[[signature]]
+name = "LiME Linux Memory Extractor Dump"
+category = "Forensics"
+extensions = ["lime", "raw"]
+header = "EMiL"
+max_size = "128GB"
+
+[[signature]]
+name = "Windows Crash Dump (PAGEDUMP 32-bit)"
+category = "Forensics"
+extensions = ["dmp"]
+header = "PAGE"
+max_size = "64GB"
+
+[[signature]]
+name = "Windows Crash Dump (PAGEDU64 64-bit)"
+category = "Forensics"
+extensions = ["dmp"]
+header = "PAGEDUMP"
+max_size = "128GB"
+
+[[signature]]
+name = "Windows Crash Dump (PAGEDU64 variant)"
+category = "Forensics"
+extensions = ["dmp"]
+header = "PAGEDU64"
+max_size = "128GB"
+
+[[signature]]
+name = "GUID Partition Table (GPT Header)"
+category = "Forensics"
+extensions = ["bin", "raw"]
+header = "EFI PART"
+max_size = "10MB"

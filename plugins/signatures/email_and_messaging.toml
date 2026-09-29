@@ -1,0 +1,73 @@
+# Email archives, message stores, calendar and address book signatures
+
+[[signature]]
+name = "Outlook PST / OST Personal Store (Unicode)"
+category = "Email"
+extensions = ["pst", "ost"]
+header = "!BDN"
+max_size = "50GB"
+
+[[signature]]
+name = "Outlook Express Mailbox (DBX)"
+category = "Email"
+extensions = ["dbx"]
+header = "\\xCF\\xAD\\x12\\xFE"
+max_size = "4GB"
+
+[[signature]]
+name = "Outlook Message File (MSG OLE2)"
+category = "Email"
+extensions = ["msg"]
+header = "\\xD0\\xCF\\x11\\xE0\\xA1\\xB1\\x1A\\xE1"
+max_size = "500MB"
+
+[[signature]]
+name = "Standard MIME Email (EML From)"
+category = "Email"
+extensions = ["eml"]
+header = "From: "
+max_size = "100MB"
+
+[[signature]]
+name = "Standard MIME Email (EML Received)"
+category = "Email"
+extensions = ["eml"]
+header = "Received: "
+max_size = "100MB"
+
+[[signature]]
+name = "Standard MIME Email (EML Return-Path)"
+category = "Email"
+extensions = ["eml"]
+header = "Return-Path: "
+max_size = "100MB"
+
+[[signature]]
+name = "UNIX MBOX Mailbox Archive"
+category = "Email"
+extensions = ["mbox"]
+header = "From "
+max_size = "50GB"
+
+[[signature]]
+name = "vCard Contact Card (VCF)"
+category = "Email"
+extensions = ["vcf"]
+header = "BEGIN:VCARD"
+footer = "END:VCARD"
+max_size = "10MB"
+
+[[signature]]
+name = "iCalendar Schedule Event (ICS)"
+category = "Email"
+extensions = ["ics"]
+header = "BEGIN:VCALENDAR"
+footer = "END:VCALENDAR"
+max_size = "20MB"
+
+[[signature]]
+name = "Telegram Desktop Storage (TDF$)"
+category = "Email"
+extensions = ["tdf"]
+header = "TDF$"
+max_size = "10GB"

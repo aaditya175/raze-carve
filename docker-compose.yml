@@ -1,0 +1,73 @@
+services:
+  # ==========================================================================
+  # RAZE-CARVE Web Portal, Downloads Center & Video Showcase
+  # Open http://localhost:5174 in any browser to view the distribution portal
+  # ==========================================================================
+  website:
+    image: lonewolf175/raze-carve:latest
+    build:
+      context: ./website
+      dockerfile: Dockerfile
+    container_name: raze-carve-website
+    ports:
+      - "5174:80"
+    volumes:
+      - ./website/public/releases:/usr/share/nginx/html/releases:ro
+      - ./website/public/demo_videos:/usr/share/nginx/html/demo_videos:ro
+    restart: unless-stopped
+
+  # ==========================================================================
+  # Web GUI Server Mode (Best for Windows, macOS, and remote browser access)
+  # Open http://localhost:7878 in any web browser for full visual forensic UI
+  # ==========================================================================
+  gui:
+    image: normie69k/secureforge:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: secureforge-gui
+    privileged: true
+    ports:
+      - "7878:7878"
+    volumes:
+      - /dev:/dev
+      - ./data:/data
+      - ./plugins:/usr/local/share/secureforge/plugins
+    command: ["gui"]
+    restart: unless-stopped
+
+  # ==========================================================================
+  # Interactive TUI Mode (Best for Linux terminals, SSH, and minimal ISOs)
+  # Run: docker compose run --rm tui
+  # ==========================================================================
+  tui:
+    image: normie69k/secureforge:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: secureforge-tui
+    privileged: true
+    stdin_open: true
+    tty: true
+    volumes:
+      - /dev:/dev
+      - ./data:/data
+      - ./plugins:/usr/local/share/secureforge/plugins
+    command: ["tui"]
+
+  # ==========================================================================
+  # Scripted CLI Mode (Automated sanitization, batch carving, audit reports)
+  # Run: docker compose run --rm cli info
+  # ==========================================================================
+  cli:
+    image: normie69k/secureforge:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: secureforge-cli
+    privileged: true
+    volumes:
+      - /dev:/dev
+      - ./data:/data
+      - ./plugins:/usr/local/share/secureforge/plugins
+    command: ["--help"]

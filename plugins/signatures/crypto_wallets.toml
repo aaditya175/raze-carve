@@ -1,0 +1,128 @@
+# Cryptocurrency Wallet, Password Vault & Cryptographic Key Signatures
+
+[[signature]]
+name = "Bitcoin Core Wallet (Berkeley DB Btree)"
+category = "Crypto"
+extensions = ["dat"]
+header = "\\x00\\x05\\x31\\x62"
+max_size = "500MB"
+
+[[signature]]
+name = "Bitcoin Core Wallet (Berkeley DB Hash)"
+category = "Crypto"
+extensions = ["dat"]
+header = "\\x00\\x06\\x15\\x61"
+max_size = "500MB"
+
+[[signature]]
+name = "KeePass 2.x Password Database (KDBX)"
+category = "Crypto"
+extensions = ["kdbx"]
+header = "\\x03\\xD9\\xA2\\x9A\\x67\\xFB\\x4B\\xB5"
+max_size = "250MB"
+
+[[signature]]
+name = "KeePass 1.x Password Database (KDB)"
+category = "Crypto"
+extensions = ["kdb"]
+header = "\\x9A\\xA2\\xD9\\x03\\x30\\xC7\\xFE\\x01"
+max_size = "250MB"
+
+[[signature]]
+name = "PGP / GPG Private Keyring"
+category = "Crypto"
+extensions = ["skr", "pgp", "gpg"]
+header = "\\x95\\x01"
+max_size = "50MB"
+
+[[signature]]
+name = "PGP / GPG Public Keyring"
+category = "Crypto"
+extensions = ["pkr", "pgp", "gpg"]
+header = "\\x99\\x01"
+max_size = "50MB"
+
+[[signature]]
+name = "PGP Armored Private Key"
+category = "Crypto"
+extensions = ["asc", "pgp", "key"]
+header = "-----BEGIN PGP PRIVATE KEY BLOCK-----"
+footer = "-----END PGP PRIVATE KEY BLOCK-----"
+max_size = "10MB"
+
+[[signature]]
+name = "PGP Armored Public Key"
+category = "Crypto"
+extensions = ["asc", "pgp", "pub"]
+header = "-----BEGIN PGP PUBLIC KEY BLOCK-----"
+footer = "-----END PGP PUBLIC KEY BLOCK-----"
+max_size = "10MB"
+
+[[signature]]
+name = "OpenSSH Private Key"
+category = "Crypto"
+extensions = ["key", "id_rsa", "id_ed25519"]
+header = "-----BEGIN OPENSSH PRIVATE KEY-----"
+footer = "-----END OPENSSH PRIVATE KEY-----"
+max_size = "10MB"
+
+[[signature]]
+name = "RSA PEM Private Key (PKCS#1)"
+category = "Crypto"
+extensions = ["pem", "key"]
+header = "-----BEGIN RSA PRIVATE KEY-----"
+footer = "-----END RSA PRIVATE KEY-----"
+max_size = "10MB"
+
+[[signature]]
+name = "EC PEM Private Key (SEC1)"
+category = "Crypto"
+extensions = ["pem", "key"]
+header = "-----BEGIN EC PRIVATE KEY-----"
+footer = "-----END EC PRIVATE KEY-----"
+max_size = "10MB"
+
+[[signature]]
+name = "PKCS#8 Encrypted Private Key"
+category = "Crypto"
+extensions = ["pem", "key"]
+header = "-----BEGIN ENCRYPTED PRIVATE KEY-----"
+footer = "-----END ENCRYPTED PRIVATE KEY-----"
+max_size = "10MB"
+
+[[signature]]
+name = "PKCS#8 Unencrypted Private Key"
+category = "Crypto"
+extensions = ["pem", "key"]
+header = "-----BEGIN PRIVATE KEY-----"
+footer = "-----END PRIVATE KEY-----"
+max_size = "10MB"
+
+[[signature]]
+name = "X.509 PEM Certificate"
+category = "Crypto"
+extensions = ["crt", "cer", "pem"]
+header = "-----BEGIN CERTIFICATE-----"
+footer = "-----END CERTIFICATE-----"
+max_size = "10MB"
+
+[[signature]]
+name = "SSH Public Key (RSA)"
+category = "Crypto"
+extensions = ["pub"]
+header = "ssh-rsa "
+max_size = "1MB"
+
+[[signature]]
+name = "SSH Public Key (ED25519)"
+category = "Crypto"
+extensions = ["pub"]
+header = "ssh-ed25519 "
+max_size = "1MB"
+
+[[signature]]
+name = "Ethereum Keystore V3 JSON"
+category = "Crypto"
+extensions = ["json"]
+header = "{\\\"crypto\\\":{\\\"cipher\\\""
+max_size = "10MB"

@@ -1,0 +1,120 @@
+# Source code, scripts, markup and configuration file signatures
+
+[[signature]]
+name = "Bash Shell Script"
+category = "SourceCode"
+extensions = ["sh", "bash"]
+header = "#!/bin/bash"
+max_size = "10MB"
+
+[[signature]]
+name = "POSIX Shell Script"
+category = "SourceCode"
+extensions = ["sh"]
+header = "#!/bin/sh"
+max_size = "10MB"
+
+[[signature]]
+name = "Python Script (Env Shebang)"
+category = "SourceCode"
+extensions = ["py"]
+header = "#!/usr/bin/env python"
+max_size = "20MB"
+
+[[signature]]
+name = "Python Script (Bin Shebang)"
+category = "SourceCode"
+extensions = ["py"]
+header = "#!/usr/bin/python"
+max_size = "20MB"
+
+[[signature]]
+name = "Python Script (Encoding Header)"
+category = "SourceCode"
+extensions = ["py"]
+header = "# -*- coding:"
+max_size = "20MB"
+
+[[signature]]
+name = "Node.js JavaScript Script (Shebang)"
+category = "SourceCode"
+extensions = ["js"]
+header = "#!/usr/bin/env node"
+max_size = "20MB"
+
+[[signature]]
+name = "Perl Script (Shebang)"
+category = "SourceCode"
+extensions = ["pl"]
+header = "#!/usr/bin/perl"
+max_size = "20MB"
+
+[[signature]]
+name = "Ruby Script (Shebang)"
+category = "SourceCode"
+extensions = ["rb"]
+header = "#!/usr/bin/env ruby"
+max_size = "20MB"
+
+[[signature]]
+name = "PHP Script"
+category = "SourceCode"
+extensions = ["php"]
+header = "<?php"
+max_size = "20MB"
+
+[[signature]]
+name = "Windows Batch Script (echo off)"
+category = "SourceCode"
+extensions = ["bat", "cmd"]
+header = "@echo off"
+max_size = "10MB"
+
+[[signature]]
+name = "Windows Batch Script (ECHO OFF upper)"
+category = "SourceCode"
+extensions = ["bat", "cmd"]
+header = "@ECHO OFF"
+max_size = "10MB"
+
+[[signature]]
+name = "Windows PowerShell Script"
+category = "SourceCode"
+extensions = ["ps1"]
+header = "#Requires -Version"
+max_size = "20MB"
+
+[[signature]]
+name = "C / C++ Source (Standard Header Include)"
+category = "SourceCode"
+extensions = ["c", "cpp", "h", "hpp"]
+header = "#include <"
+max_size = "20MB"
+
+[[signature]]
+name = "C / C++ Source (Local Header Include)"
+category = "SourceCode"
+extensions = ["c", "cpp", "h", "hpp"]
+header = "#include \\\""
+max_size = "20MB"
+
+[[signature]]
+name = "SQL Script (CREATE TABLE)"
+category = "SourceCode"
+extensions = ["sql"]
+header = "CREATE TABLE "
+max_size = "100MB"
+
+[[signature]]
+name = "SQL Script (INSERT INTO)"
+category = "SourceCode"
+extensions = ["sql"]
+header = "INSERT INTO "
+max_size = "500MB"
+
+[[signature]]
+name = "YAML Configuration"
+category = "SourceCode"
+extensions = ["yaml", "yml"]
+header = "---\\n"
+max_size = "20MB"

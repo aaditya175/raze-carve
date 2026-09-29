@@ -1,0 +1,74 @@
+# Video game ROMs, disc images, save files and emulator signatures
+
+[[signature]]
+name = "Nintendo NES ROM (iNES)"
+category = "Gaming"
+extensions = ["nes"]
+header = "NES\\x1A"
+max_size = "64MB"
+
+[[signature]]
+name = "Nintendo 64 ROM (Big Endian z64)"
+category = "Gaming"
+extensions = ["z64", "n64"]
+header = "\\x80\\x37\\x12\\x40"
+max_size = "128MB"
+
+[[signature]]
+name = "Nintendo 64 ROM (Byte Swapped v64)"
+category = "Gaming"
+extensions = ["v64", "n64"]
+header = "\\x37\\x80\\x40\\x12"
+max_size = "128MB"
+
+[[signature]]
+name = "Nintendo 64 ROM (Little Endian n64)"
+category = "Gaming"
+extensions = ["n64"]
+header = "\\x40\\x12\\x37\\x80"
+max_size = "128MB"
+
+[[signature]]
+name = "Game Boy Advance ROM (GBA)"
+category = "Gaming"
+extensions = ["gba"]
+# Nintendo logo bytes starting at offset 0x04
+header = "????\\x24\\xFF\\xAE\\x51"
+max_size = "64MB"
+
+[[signature]]
+name = "Nintendo GameCube / Wii Optical Disc (ISO)"
+category = "Gaming"
+extensions = ["iso", "gcm"]
+# Magic constant 0xC2339F3D at offset 0x1C
+header = "????\\xC2\\x33\\x9F\\x3D"
+max_size = "10GB"
+
+[[signature]]
+name = "Sega Genesis / Mega Drive ROM"
+category = "Gaming"
+extensions = ["bin", "gen", "md"]
+# "SEGA" brand identifier appears in header at 0x0100
+header = "????SEGA"
+max_size = "32MB"
+
+[[signature]]
+name = "ZX Spectrum Tape Image (TZX)"
+category = "Gaming"
+extensions = ["tzx"]
+header = "ZXTape!\\x1A"
+max_size = "50MB"
+
+[[signature]]
+name = "PlayStation Package File (PKG)"
+category = "Gaming"
+extensions = ["pkg"]
+header = "\\x7FCNT"
+max_size = "100GB"
+
+[[signature]]
+name = "Xbox XBE Executable"
+category = "Gaming"
+extensions = ["xbe"]
+header = "XBEH"
+max_size = "4GB"

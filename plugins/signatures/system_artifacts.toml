@@ -1,0 +1,106 @@
+# Operating System & Application Forensic Artifact Signatures
+
+[[signature]]
+name = "Windows Event Log (EVTX)"
+category = "System"
+extensions = ["evtx"]
+header = "ElfFile\\x00"
+max_size = "4GB"
+
+[[signature]]
+name = "Windows Prefetch Executable Trace (SCCA)"
+category = "System"
+extensions = ["pf"]
+header = "SCCA"
+max_size = "50MB"
+
+[[signature]]
+name = "Windows Compressed Prefetch (MAM)"
+category = "System"
+extensions = ["pf"]
+header = "MAM\\x04"
+max_size = "50MB"
+
+[[signature]]
+name = "Windows Registry Hive"
+category = "System"
+extensions = ["dat", "hive"]
+header = "regf"
+max_size = "8GB"
+
+[[signature]]
+name = "Windows Shell Shortcut (LNK)"
+category = "System"
+extensions = ["lnk"]
+header = "\\x4C\\x00\\x00\\x00\\x01\\x14\\x02\\x00"
+max_size = "10MB"
+
+[[signature]]
+name = "Windows Recycle Bin $I Metadata (Win 10/11)"
+category = "System"
+extensions = ["bin"]
+header = "\\x02\\x00\\x00\\x00\\x00\\x00\\x00\\x00"
+max_size = "10MB"
+
+[[signature]]
+name = "Windows Recycle Bin $I Metadata (Vista-8)"
+category = "System"
+extensions = ["bin"]
+header = "\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00"
+max_size = "10MB"
+
+[[signature]]
+name = "Windows Thumbnail Cache (thumbcache CMMM)"
+category = "System"
+extensions = ["db"]
+header = "CMMM"
+max_size = "500MB"
+
+[[signature]]
+name = "Windows MiniDump Crash Memory"
+category = "System"
+extensions = ["dmp"]
+header = "MDMP\\x93\\xA7"
+max_size = "16GB"
+
+[[signature]]
+name = "Linux systemd Journal"
+category = "System"
+extensions = ["journal"]
+header = "LPKSHHRH"
+max_size = "8GB"
+
+[[signature]]
+name = "macOS Binary Property List (bplist)"
+category = "System"
+extensions = ["plist"]
+header = "bplist00"
+max_size = "100MB"
+
+[[signature]]
+name = "macOS XML Property List"
+category = "System"
+extensions = ["plist"]
+header = "<!DOCTYPE plist"
+max_size = "100MB"
+
+[[signature]]
+name = "macOS Desktop Services Store (DS_Store)"
+category = "System"
+extensions = ["DS_Store"]
+header = "\\x00\\x00\\x00\\x01Bud1"
+max_size = "50MB"
+
+[[signature]]
+name = "Google Chrome / Chromium Cache Block"
+category = "System"
+extensions = ["cache"]
+header = "\\xC1\\xCA\\x00\\x00"
+max_size = "200MB"
+
+[[signature]]
+name = "Firefox Places History / Bookmarks (SQLite)"
+category = "System"
+extensions = ["sqlite"]
+header = "SQLite format 3\\x00"
+max_size = "500MB"

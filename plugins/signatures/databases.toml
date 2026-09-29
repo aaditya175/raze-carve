@@ -1,0 +1,106 @@
+# Database and storage engine file signatures
+
+[[signature]]
+name = "SQLite 3 Database"
+category = "Databases"
+extensions = ["sqlite", "db", "sqlite3"]
+header = "SQLite format 3\\x00"
+max_size = "50GB"
+
+[[signature]]
+name = "Berkeley DB (Hash)"
+category = "Databases"
+extensions = ["db", "dat"]
+header = "\\x00\\x06\\x15\\x61"
+max_size = "10GB"
+
+[[signature]]
+name = "Berkeley DB (Btree)"
+category = "Databases"
+extensions = ["db", "dat"]
+header = "\\x00\\x05\\x31\\x62"
+max_size = "10GB"
+
+[[signature]]
+name = "Microsoft Access Database (Jet MDB)"
+category = "Databases"
+extensions = ["mdb"]
+header = "\\x00\\x01\\x00\\x00Standard Jet DB"
+max_size = "2GB"
+
+[[signature]]
+name = "Microsoft Access Database (ACE ACCDB)"
+category = "Databases"
+extensions = ["accdb"]
+header = "\\x00\\x01\\x00\\x00Standard ACE DB"
+max_size = "4GB"
+
+[[signature]]
+name = "Redis RDB Dump"
+category = "Databases"
+extensions = ["rdb"]
+header = "REDIS"
+max_size = "50GB"
+
+[[signature]]
+name = "PostgreSQL Custom Format Dump"
+category = "Databases"
+extensions = ["dump", "pgdump"]
+header = "PGDMP"
+max_size = "100GB"
+
+[[signature]]
+name = "MySQL MyISAM Table Index (MYI)"
+category = "Databases"
+extensions = ["myi"]
+header = "\\xFE\\x01"
+max_size = "50GB"
+
+[[signature]]
+name = "MySQL MyISAM Table Data (MYD)"
+category = "Databases"
+extensions = ["myd"]
+header = "\\xFE\\x02"
+max_size = "100GB"
+
+[[signature]]
+name = "MySQL / MariaDB InnoDB Tablespace (IBD)"
+category = "Databases"
+extensions = ["ibd"]
+header = "\\xD6\\x85\\x2F\\x00"
+max_size = "100GB"
+
+[[signature]]
+name = "RocksDB / LevelDB SSTable"
+category = "Databases"
+extensions = ["sst"]
+footer = "\\xDB\\x47\\x75\\x24\\x8B\\x80\\xFB\\x57"
+max_size = "10GB"
+
+[[signature]]
+name = "Firebird / InterBase Database"
+category = "Databases"
+extensions = ["fdb", "gdb"]
+header = "\\x16\\x19\\x00\\x00"
+max_size = "50GB"
+
+[[signature]]
+name = "dBase III / FoxBase Database (DBF)"
+category = "Databases"
+extensions = ["dbf"]
+header = "\\x03"
+max_size = "2GB"
+
+[[signature]]
+name = "Visual FoxPro Database (DBF)"
+category = "Databases"
+extensions = ["dbf"]
+header = "\\x30"
+max_size = "4GB"
+
+[[signature]]
+name = "Paradox Database Table"
+category = "Databases"
+extensions = ["db"]
+header = "\\x00\\x00\\x08\\x00"
+max_size = "2GB"

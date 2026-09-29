@@ -1,0 +1,375 @@
+# Media file signatures — images, audio, video
+
+# ─── Images ──────────────────────────────────────────────────────────────────
+
+[[signature]]
+name = "JPEG"
+category = "Image"
+extensions = ["jpg"]
+header = "\\xFF\\xD8\\xFF"
+footer = "\\xFF\\xD9"
+max_size = "50MB"
+
+[[signature]]
+name = "PNG"
+category = "Image"
+extensions = ["png"]
+header = "\\x89PNG\\r\\n\\x1A\\n"
+footer = "IEND\\xAE\\x42\\x60\\x82"
+max_size = "100MB"
+
+[[signature]]
+name = "GIF87a"
+category = "Image"
+extensions = ["gif"]
+header = "GIF87a"
+footer = "\\x00\\x3B"
+max_size = "50MB"
+
+[[signature]]
+name = "GIF89a"
+category = "Image"
+extensions = ["gif"]
+header = "GIF89a"
+footer = "\\x00\\x3B"
+max_size = "50MB"
+
+[[signature]]
+name = "BMP"
+category = "Image"
+extensions = ["bmp"]
+header = "BM"
+max_size = "100MB"
+
+[[signature]]
+name = "TIFF LE"
+category = "Image"
+extensions = ["tiff"]
+header = "II\\x2A\\x00"
+max_size = "500MB"
+
+[[signature]]
+name = "TIFF BE"
+category = "Image"
+extensions = ["tiff"]
+header = "MM\\x00\\x2A"
+max_size = "500MB"
+
+[[signature]]
+name = "WebP"
+category = "Image"
+extensions = ["webp"]
+header = "RIFF????WEBP"
+max_size = "100MB"
+
+[[signature]]
+name = "ICO"
+category = "Image"
+extensions = ["ico"]
+header = "\\x00\\x00\\x01\\x00"
+max_size = "10MB"
+
+[[signature]]
+name = "CUR"
+category = "Image"
+extensions = ["cur"]
+header = "\\x00\\x00\\x02\\x00"
+max_size = "10MB"
+
+[[signature]]
+name = "PSD"
+category = "Image"
+extensions = ["psd"]
+header = "8BPS"
+max_size = "2GB"
+
+[[signature]]
+name = "HEIC"
+category = "Image"
+extensions = ["heic"]
+header = "????ftypheic"
+max_size = "200MB"
+
+[[signature]]
+name = "HEIF"
+category = "Image"
+extensions = ["heif"]
+header = "????ftypmif1"
+max_size = "200MB"
+
+[[signature]]
+name = "AVIF"
+category = "Image"
+extensions = ["avif"]
+header = "????ftypavif"
+max_size = "200MB"
+
+[[signature]]
+name = "JPEG XL"
+category = "Image"
+extensions = ["jxl"]
+header = "\\xFF\\x0A"
+max_size = "200MB"
+
+[[signature]]
+name = "JPEG XL Container"
+category = "Image"
+extensions = ["jxl"]
+header = "\\x00\\x00\\x00\\x0CJXL \\r\\n\\x87\\n"
+max_size = "200MB"
+
+[[signature]]
+name = "OpenEXR"
+category = "Image"
+extensions = ["exr"]
+header = "\\x76\\x2F\\x31\\x01"
+max_size = "1GB"
+
+[[signature]]
+name = "JPEG 2000"
+category = "Image"
+extensions = ["jp2"]
+header = "\\x00\\x00\\x00\\x0C\\x6A\\x50\\x20\\x20\\x0D\\x0A\\x87\\x0A"
+max_size = "500MB"
+
+[[signature]]
+name = "PCX"
+category = "Image"
+extensions = ["pcx"]
+header = "\\x0A\\x05\\x01"
+max_size = "50MB"
+
+[[signature]]
+name = "TGA"
+category = "Image"
+extensions = ["tga"]
+footer = "TRUEVISION-XFILE.\\x00"
+max_size = "500MB"
+
+# ─── Audio ───────────────────────────────────────────────────────────────────
+
+[[signature]]
+name = "MP3 ID3v2"
+category = "Audio"
+extensions = ["mp3"]
+header = "ID3"
+max_size = "200MB"
+
+[[signature]]
+name = "MP3 SyncFF FB"
+category = "Audio"
+extensions = ["mp3"]
+header = "\\xFF\\xFB"
+max_size = "200MB"
+
+[[signature]]
+name = "MP3 SyncFF FA"
+category = "Audio"
+extensions = ["mp3"]
+header = "\\xFF\\xFA"
+max_size = "200MB"
+
+[[signature]]
+name = "MP3 SyncFF F3"
+category = "Audio"
+extensions = ["mp3"]
+header = "\\xFF\\xF3"
+max_size = "200MB"
+
+[[signature]]
+name = "MP3 SyncFF F2"
+category = "Audio"
+extensions = ["mp3"]
+header = "\\xFF\\xF2"
+max_size = "200MB"
+
+[[signature]]
+name = "FLAC"
+category = "Audio"
+extensions = ["flac"]
+header = "fLaC"
+max_size = "1GB"
+
+[[signature]]
+name = "WAV"
+category = "Audio"
+extensions = ["wav"]
+header = "RIFF????WAVE"
+max_size = "4GB"
+
+[[signature]]
+name = "OGG"
+category = "Audio"
+extensions = ["ogg"]
+header = "OggS"
+max_size = "500MB"
+
+[[signature]]
+name = "AAC ADTS F1"
+category = "Audio"
+extensions = ["aac"]
+header = "\\xFF\\xF1"
+max_size = "200MB"
+
+[[signature]]
+name = "AAC ADTS F9"
+category = "Audio"
+extensions = ["aac"]
+header = "\\xFF\\xF9"
+max_size = "200MB"
+
+[[signature]]
+name = "M4A"
+category = "Audio"
+extensions = ["m4a"]
+header = "????ftypM4A "
+max_size = "500MB"
+
+[[signature]]
+name = "MIDI"
+category = "Audio"
+extensions = ["mid"]
+header = "MThd"
+max_size = "50MB"
+
+[[signature]]
+name = "WMA"
+category = "Audio"
+extensions = ["wma"]
+header = "\\x30\\x26\\xB2\\x75\\x8E\\x66\\xCF\\x11"
+max_size = "500MB"
+
+[[signature]]
+name = "AIFF"
+category = "Audio"
+extensions = ["aiff"]
+header = "FORM????AIFF"
+max_size = "4GB"
+
+[[signature]]
+name = "APE"
+category = "Audio"
+extensions = ["ape"]
+header = "MAC "
+max_size = "1GB"
+
+[[signature]]
+name = "WavPack"
+category = "Audio"
+extensions = ["wv"]
+header = "wvpk"
+max_size = "1GB"
+
+[[signature]]
+name = "AMR"
+category = "Audio"
+extensions = ["amr"]
+header = "#!AMR"
+max_size = "100MB"
+
+[[signature]]
+name = "AU"
+category = "Audio"
+extensions = ["au"]
+header = ".snd"
+max_size = "500MB"
+
+[[signature]]
+name = "Musepack"
+category = "Audio"
+extensions = ["mpc"]
+header = "MP+"
+max_size = "500MB"
+
+[[signature]]
+name = "RealAudio"
+category = "Audio"
+extensions = ["ra"]
+header = ".ra\\xFD"
+max_size = "500MB"
+
+# ─── Video ───────────────────────────────────────────────────────────────────
+
+[[signature]]
+name = "MP4"
+category = "Video"
+extensions = ["mp4"]
+header = "????ftyp"
+max_size = "50GB"
+
+[[signature]]
+name = "AVI"
+category = "Video"
+extensions = ["avi"]
+header = "RIFF????AVI "
+max_size = "50GB"
+
+[[signature]]
+name = "MKV"
+category = "Video"
+extensions = ["mkv"]
+header = "\\x1A\\x45\\xDF\\xA3"
+max_size = "50GB"
+
+[[signature]]
+name = "FLV"
+category = "Video"
+extensions = ["flv"]
+header = "FLV\\x01"
+max_size = "10GB"
+
+[[signature]]
+name = "WMV"
+category = "Video"
+extensions = ["wmv"]
+header = "\\x30\\x26\\xB2\\x75\\x8E\\x66\\xCF\\x11"
+max_size = "10GB"
+
+[[signature]]
+name = "MPEG-TS"
+category = "Video"
+extensions = ["ts"]
+header = "\\x47"
+max_size = "50GB"
+
+[[signature]]
+name = "MPEG-PS"
+category = "Video"
+extensions = ["mpg"]
+header = "\\x00\\x00\\x01\\xBA"
+max_size = "10GB"
+
+[[signature]]
+name = "3GP"
+category = "Video"
+extensions = ["3gp"]
+header = "????ftyp3gp"
+max_size = "10GB"
+
+[[signature]]
+name = "QuickTime"
+category = "Video"
+extensions = ["mov"]
+header = "????ftypqt"
+max_size = "50GB"
+
+[[signature]]
+name = "RealMedia"
+category = "Video"
+extensions = ["rm"]
+header = ".RMF"
+max_size = "10GB"
+
+[[signature]]
+name = "SWF Uncompressed"
+category = "Video"
+extensions = ["swf"]
+header = "FWS"
+max_size = "500MB"
+
+[[signature]]
+name = "SWF Compressed"
+category = "Video"
+extensions = ["swf"]
+header = "CWS"
+max_size = "500MB"

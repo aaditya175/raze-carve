@@ -1,0 +1,82 @@
+# Typography, Fonts, 3D Models and CAD signatures
+
+# ─── Fonts ───────────────────────────────────────────────────────────────────
+
+[[signature]]
+name = "TrueType Font (TTF)"
+category = "Fonts"
+extensions = ["ttf"]
+header = "\\x00\\x01\\x00\\x00\\x00"
+max_size = "50MB"
+
+[[signature]]
+name = "OpenType Font (OTF)"
+category = "Fonts"
+extensions = ["otf"]
+header = "OTTO"
+max_size = "50MB"
+
+[[signature]]
+name = "Web Open Font Format 1 (WOFF)"
+category = "Fonts"
+extensions = ["woff"]
+header = "wOFF"
+max_size = "50MB"
+
+[[signature]]
+name = "Web Open Font Format 2 (WOFF2)"
+category = "Fonts"
+extensions = ["woff2"]
+header = "wOF2"
+max_size = "50MB"
+
+[[signature]]
+name = "Embedded OpenType Font (EOT)"
+category = "Fonts"
+extensions = ["eot"]
+header = "????\\x00\\x00\\x01\\x00\\x00\\x02LP"
+max_size = "50MB"
+
+# ─── 3D Models & CAD ─────────────────────────────────────────────────────────
+
+[[signature]]
+name = "Blender 3D Project"
+category = "3D"
+extensions = ["blend"]
+header = "BLENDER"
+max_size = "4GB"
+
+[[signature]]
+name = "Autodesk AutoCAD Drawing (DWG)"
+category = "CAD"
+extensions = ["dwg"]
+header = "AC10"
+max_size = "2GB"
+
+[[signature]]
+name = "Autodesk AutoCAD DXF"
+category = "CAD"
+extensions = ["dxf"]
+header = "0\\r\\nSECTION"
+max_size = "2GB"
+
+[[signature]]
+name = "Autodesk 3DS Model"
+category = "3D"
+extensions = ["3ds"]
+header = "\\x4D\\x4D\\x02\\x00"
+max_size = "1GB"
+
+[[signature]]
+name = "Khronos glTF Binary Model (GLB)"
+category = "3D"
+extensions = ["glb"]
+header = "glTF"
+max_size = "2GB"
+
+[[signature]]
+name = "Kaydara FBX Binary Model"
+category = "3D"
+extensions = ["fbx"]
+header = "Kaydara FBX Binary  \\x00"
+max_size = "4GB"

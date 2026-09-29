@@ -1,0 +1,16 @@
+[Unit]
+Description=SecureForge Forensic Workstation API Server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+ExecStart=/usr/local/bin/secureforge-desktop --server --port 7878 --no-browser
+Restart=always
+RestartSec=2
+Environment=SECUREFORGE_PORT=7878
+Environment=SECUREFORGE_PIPELINE_DIR=/usr/local/share/secureforge/pipeline
+
+[Install]
+WantedBy=multi-user.target
