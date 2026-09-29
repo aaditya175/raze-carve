@@ -47,8 +47,11 @@ RUN echo 'server { \
 # Copy compiled web assets from builder
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy the complete production release media (including 1.35 GB ISO) so it is downloadable anywhere!
-COPY public/releases /usr/share/nginx/html/releases
+# Ensure releases directory exists
+RUN mkdir -p /usr/share/nginx/html/releases
+
+# Copy release media if present in build context
+COPY public/release[s]/ /usr/share/nginx/html/releases/
 
 EXPOSE 80
 
