@@ -1,7 +1,6 @@
 services:
-  - type: web
-    name: raze-carve-portal
-    runtime: static
+  - type: static
+    name: raze-carve
     rootDir: website
     buildCommand: npm install && npm run build
     staticPublishPath: dist
