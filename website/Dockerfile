@@ -50,8 +50,8 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # Ensure releases directory exists
 RUN mkdir -p /usr/share/nginx/html/releases
 
-# Copy release media if present in build context
-COPY public/release[s]/ /usr/share/nginx/html/releases/
+# Copy production releases (including embedded ISO)
+COPY public/releases /usr/share/nginx/html/releases
 
 EXPOSE 80
 
