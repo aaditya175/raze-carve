@@ -331,7 +331,7 @@ export const SandboxPage: React.FC<SandboxPageProps> = ({ onNavigate }) => {
   const [oracleEndpointUrl, setOracleEndpointUrl] = useState('');
   const [oracleSessionKey, setOracleSessionKey] = useState(0);
 
-  const activeOracleUrl = oracleEndpointUrl || 'http://localhost:8000';
+  const activeOracleUrl = oracleEndpointUrl || 'https://describe-associates-alternatives-flashers.trycloudflare.com';
 
   return (
     <div className={`max-w-7xl mx-auto py-6 space-y-6 ${isFullscreen ? 'relative' : ''}`}>

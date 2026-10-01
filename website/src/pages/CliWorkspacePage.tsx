@@ -160,7 +160,7 @@ const MOCK_OUTPUTS: Record<string, string[]> = {
   ],
 };
 
-const CLOUDFLARE_SANDBOX_URL = 'https://speeches-targeted-deutschland-tile.trycloudflare.com/';
+const CLOUDFLARE_SANDBOX_URL = 'https://describe-associates-alternatives-flashers.trycloudflare.com/';
 
 export const CliWorkspacePage: React.FC<CliWorkspacePageProps> = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState<'live-sandbox' | 'simulator'>('live-sandbox');
@@ -241,7 +241,7 @@ export const CliWorkspacePage: React.FC<CliWorkspacePageProps> = ({ onNavigate }
         {/* Live Status Indicator & Quick External Link */}
         <div className="flex items-center gap-2">
           <a
-            href="https://speeches-targeted-deutschland-tile.trycloudflare.com/"
+            href={CLOUDFLARE_SANDBOX_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-900/90 text-xs text-white hover:border-red-500/50 hover:bg-slate-800 transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
