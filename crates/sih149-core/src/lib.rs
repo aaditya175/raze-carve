@@ -21,3 +21,5 @@ pub mod wiper;
 
 #[cfg(test)]
 mod tests;
+#[cfg(test)]
+mod tests_extended;

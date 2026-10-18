@@ -340,10 +340,10 @@ To eliminate the risk of accidental data loss during high-stress incident triage
 
 ## 8. Testing Suite & Quality Assurance
 
-RAZE-CARVE maintains a comprehensive, zero-warning test suite with **202 automated tests**:
+RAZE-CARVE maintains a comprehensive, zero-warning test suite with **420 automated tests**:
 
 ```bash
-# 1. Rust Workspace Unit & Integration Tests (181 tests)
+# 1. Rust Workspace Unit & Integration Tests (399 tests)
 cargo test --workspace
 
 # 2. Python Forensic Pipeline Tests (16 tests)

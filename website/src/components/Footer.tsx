@@ -31,6 +31,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
               Complies with NIST SP 800-88 Rev 1 & DoD 5220.22-M
             </div>
+            <div className="pt-1">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20">
+                <Heart className="w-3 h-3 text-red-500 fill-red-500" />
+                Made for SIH 2026 • Smart India Hackathon
+              </span>
+            </div>
           </div>
 
           {/* Product */}
@@ -144,8 +150,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="pt-6 border-t border-slate-200 dark:border-slate-850 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
-          <div>
-            © 2026 RAZE-CARVE Engineering Team. Released under Apache-2.0 / MIT licenses.
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+            <span>© 2026 RAZE-CARVE Engineering Team. Released under Apache-2.0 / MIT licenses.</span>
+            <span className="hidden sm:inline text-slate-400">•</span>
+            <span className="inline-flex items-center gap-1 font-semibold text-red-600 dark:text-red-400">
+              <Heart className="w-3 h-3 text-red-500 fill-red-500 inline" />
+              Made for SIH 2026 (Smart India Hackathon)
+            </span>
           </div>
           <div className="flex items-center gap-4">
             <span>Air-Gapped Verified</span>

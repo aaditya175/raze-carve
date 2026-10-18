@@ -331,7 +331,7 @@ export const SandboxPage: React.FC<SandboxPageProps> = ({ onNavigate }) => {
   const [oracleEndpointUrl, setOracleEndpointUrl] = useState('');
   const [oracleSessionKey, setOracleSessionKey] = useState(0);
 
-  const activeOracleUrl = oracleEndpointUrl || 'https://describe-associates-alternatives-flashers.trycloudflare.com';
+  const activeOracleUrl = oracleEndpointUrl || 'https://secure-forge-sandbox.duckdns.org';
 
   return (
     <div className={`max-w-7xl mx-auto py-6 space-y-6 ${isFullscreen ? 'relative' : ''}`}>
@@ -459,7 +459,7 @@ export const SandboxPage: React.FC<SandboxPageProps> = ({ onNavigate }) => {
                   </span>
                 </div>
                 <div className="text-[11px] font-mono text-slate-500">
-                  Endpoint: <code className="text-emerald-400 font-bold">{oracleEndpointUrl}</code> (Direct High-Speed PTY)
+                  Endpoint: <code className="text-emerald-400 font-bold">{activeOracleUrl}</code> (Direct High-Speed PTY)
                 </div>
               </div>
             </div>

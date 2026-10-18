@@ -160,7 +160,7 @@ const MOCK_OUTPUTS: Record<string, string[]> = {
   ],
 };
 
-const CLOUDFLARE_SANDBOX_URL = 'https://describe-associates-alternatives-flashers.trycloudflare.com/';
+const CLOUDFLARE_SANDBOX_URL = 'https://secure-forge-sandbox.duckdns.org/';
 
 export const CliWorkspacePage: React.FC<CliWorkspacePageProps> = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState<'live-sandbox' | 'simulator'>('live-sandbox');
@@ -323,7 +323,7 @@ export const CliWorkspacePage: React.FC<CliWorkspacePageProps> = ({ onNavigate }
                 </span>
               </div>
               <div className="text-[11px] font-mono text-slate-500">
-                Connected via Cloudflare Tunnel
+                Connected via secure-forge-sandbox.duckdns.org
               </div>
             </div>
 

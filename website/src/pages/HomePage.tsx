@@ -680,7 +680,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
           <div className="space-y-2">
             <div className="text-4xl sm:text-5xl font-black text-[#00D26A] font-mono tracking-tight flex items-center justify-center">
-              <CountUp to={202} duration={0.65} />
+              <CountUp to={420} duration={0.65} />
             </div>
             <div className="text-xs sm:text-sm text-slate-400 font-medium">Automated Test Assertions Passing</div>
           </div>

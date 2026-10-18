@@ -13,7 +13,7 @@
 [![Rust](https://img.shields.io/badge/Rust-1.80+-orange.svg)](https://www.rust-lang.org/)
 [![NIST SP 800-88](https://img.shields.io/badge/NIST_SP_800--88-Rev_1_Compliant-green.svg)](https://csrc.nist.gov/publications/detail/sp/800-88/rev-1/final)
 [![DoD 5220.22-M](https://img.shields.io/badge/DoD_5220.22--M-3_%26_7_Pass-brightgreen.svg)]()
-[![Tests: 202 Passing](https://img.shields.io/badge/Tests-202_Passing-success.svg)]()
+[![Tests: 420 Passing](https://img.shields.io/badge/Tests-420_Passing-success.svg)]()
 [![Docker Hub](https://img.shields.io/badge/Docker_Hub-lonewolf175%2Fraze--carve-blue.svg?logo=docker)](https://hub.docker.com/r/lonewolf175/raze-carve)
 [![Release: v0.2.1](https://img.shields.io/badge/Release-v0.2.1-informational.svg)](https://github.com/aaditya175/raze-carve/releases)
 
@@ -383,10 +383,10 @@ python3 pipeline/timestamp.py \
 
 ## 🧪 Automated Testing & Quality Assurance
 
-RAZE-CARVE includes a comprehensive, zero-warning test suite comprising **202 automated tests** across Rust core, integration suites, Python pipeline, and Web UI:
+RAZE-CARVE includes a comprehensive, zero-warning test suite comprising **420 automated tests** across Rust core, integration suites, Python pipeline, and Web UI:
 
 ```bash
-# 1. Run all workspace unit and integration tests (181 Rust tests)
+# 1. Run all workspace unit and integration tests (399 Rust tests)
 cargo test --workspace
 
 # 2. Run Python forensic pipeline unit tests (16 tests)

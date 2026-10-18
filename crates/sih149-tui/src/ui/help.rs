@@ -225,7 +225,7 @@ fn render_about(frame: &mut Frame, area: Rect) {
         )),
         Line::raw(""),
         Line::from(Span::styled(
-            "  Built for Smart India Hackathon 2024 — SIH-149",
+            "  Built for Smart India Hackathon 2026 — SIH-149",
             Style::default().fg(Theme::MUTED),
         )),
         Line::from(Span::styled(
