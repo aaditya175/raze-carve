@@ -115,7 +115,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://github.com/razecarve/razecarve"
+                  href="https://github.com/aaditya175/raze-carve"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-brand-500 flex items-center gap-1"
@@ -136,7 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <a
-                  href="https://github.com/razecarve/razecarve/issues"
+                  href="https://github.com/aaditya175/raze-carve/issues"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-brand-500 flex items-center gap-1"
